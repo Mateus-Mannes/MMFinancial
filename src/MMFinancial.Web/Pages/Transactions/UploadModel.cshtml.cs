@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
-namespace MMFinancial.Web.Pages.Files
+namespace MMFinancial.Web.Pages.Transactions
 {
-    public class Index : AbpPageModel
+    public class UploadModel : AbpPageModel
     {
         [BindProperty]
         public UploadFileDto UploadFileDto { get; set; }
@@ -17,7 +17,7 @@ namespace MMFinancial.Web.Pages.Files
 
         public bool Uploaded { get; set; } = false;
 
-        public Index(IFileAppService fileAppService)
+        public UploadModel(IFileAppService fileAppService)
         {
             _fileAppService = fileAppService;
         }
