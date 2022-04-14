@@ -20,11 +20,6 @@ namespace MMFinancial
         {
             var fileDto = await _fileAppService.GetBlobAsync(new GetBlobRequestDto { Name = fileName });
             return File(fileDto.Content, "application/octet-stream", fileDto.Name);
-
-            //READ THE FILE:
-            //var streamDto = await _fileAppService.GetFileStreamAsync(new GetStreamRequestDto { Name = fileName });
-            //StreamReader sr = new StreamReader(streamDto._Stream);
-            //string line = sr.ReadLine();
         }
     }
 }

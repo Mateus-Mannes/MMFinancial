@@ -5,6 +5,7 @@ using MMFinancial;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
+using System;
 
 namespace MMFinancial.Web.Pages.Transactions
 {
@@ -41,6 +42,17 @@ namespace MMFinancial.Web.Pages.Transactions
                     }
                 );
             }
+
+            //READ THE FILE:
+            var streamDto = await _fileAppService.GetFileStreamAsync(new GetStreamRequestDto { Name = UploadFileDto.Name });
+            StreamReader sr = new StreamReader(streamDto._Stream);
+            string line = sr.ReadLine();
+            while (line != null)
+            {
+                Console.WriteLine(line);
+                line = sr.ReadLine();
+            }
+            
 
             return Page();
         }
