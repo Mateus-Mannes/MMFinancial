@@ -13,8 +13,13 @@
         <abp-row>
             <abp-column>
                 <form method="post" enctype="multipart/form-data">
+                    @if(Model.EmptyFile){
+                        <div class="alert alert-danger" role="alert">
+                          Choose a non empty file
+                        </div>
+                        }
                     <div hidden>
-                    <abp-input asp-for="UploadFileDto.Name"></abp-input>
+                        <abp-input asp-for="UploadFileDto.Name"></abp-input>
                     </div>
                     <abp-input asp-for="UploadFileDto.File"></abp-input>
 

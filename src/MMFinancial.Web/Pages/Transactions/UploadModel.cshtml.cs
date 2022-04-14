@@ -18,6 +18,8 @@ namespace MMFinancial.Web.Pages.Transactions
 
         public bool Uploaded { get; set; } = false;
 
+        public bool EmptyFile { get; set; }
+
         public UploadModel(IFileAppService fileAppService)
         {
             _fileAppService = fileAppService;
@@ -30,6 +32,7 @@ namespace MMFinancial.Web.Pages.Transactions
 
         public async Task<IActionResult> OnPostAsync()
         {
+            EmptyFile = false;
             using (var memoryStream = new MemoryStream())
             {
                 await UploadFileDto.File.CopyToAsync(memoryStream);
@@ -47,6 +50,14 @@ namespace MMFinancial.Web.Pages.Transactions
             var streamDto = await _fileAppService.GetFileStreamAsync(new GetStreamRequestDto { Name = UploadFileDto.Name });
             StreamReader sr = new StreamReader(streamDto._Stream);
             string line = sr.ReadLine();
+            if(line == null || line == "" )
+            {
+                EmptyFile = true;
+                return Page();
+            }
+            string[] lineItems = line.Split(",");
+            string shortDate = DateTime.Parse(lineItems[7]).ToShortDateString();
+
             while (line != null)
             {
                 Console.WriteLine(line);
