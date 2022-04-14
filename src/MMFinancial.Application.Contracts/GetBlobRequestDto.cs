@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations; 
-namespace FileActionsDemo
+namespace MMFinancial
 { 
     public class GetBlobRequestDto{
     [Required] 

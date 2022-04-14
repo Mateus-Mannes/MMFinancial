@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace FileActionsDemo
+namespace MMFinancial
 {
     public class FileController : AbpController
     {
@@ -19,9 +19,12 @@ namespace FileActionsDemo
         public async Task<IActionResult> DownloadAsync(string fileName)
         {
             var fileDto = await _fileAppService.GetBlobAsync(new GetBlobRequestDto { Name = fileName });
-            var teste = File(fileDto.Content, "application/octet-stream", fileDto.Name);
-            string strFileData = System.Text.Encoding.UTF8.GetString(teste.FileContents, 0, teste.FileContents.Length);
             return File(fileDto.Content, "application/octet-stream", fileDto.Name);
+
+            //READ THE FILE:
+            //var streamDto = await _fileAppService.GetFileStreamAsync(new GetStreamRequestDto { Name = fileName });
+            //StreamReader sr = new StreamReader(streamDto._Stream);
+            //string line = sr.ReadLine();
         }
     }
 }

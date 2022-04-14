@@ -7,23 +7,22 @@
 
 <abp-card>
     <abp-card-header>
-        <h3>File Upload and Download</h3>
+        <h3>Tractions File Upload</h3>
     </abp-card-header>
     <abp-card-body>
         <abp-row>
             <abp-column>
-                <h3>Upload File</h3>
-                <hr />
                 <form method="post" enctype="multipart/form-data">
+                    <div hidden>
                     <abp-input asp-for="UploadFileDto.Name"></abp-input>
-
+                    </div>
                     <abp-input asp-for="UploadFileDto.File"></abp-input>
 
                     <input type="submit" class="btn btn-info" />
                 </form>
             </abp-column>
 
-            <abp-column style="border-left: 1px dotted gray">
+            @*<abp-column style="border-left: 1px dotted gray">
                 <h3>Download File</h3>
                 <hr />
                 <form id="DownloadFile">
@@ -34,7 +33,7 @@
 
                     <input type="submit" class="btn btn-info"/>
                 </form>
-            </abp-column>
+            </abp-column>*@
         </abp-row>
     </abp-card-body>
 </abp-card>

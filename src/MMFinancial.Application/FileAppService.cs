@@ -1,12 +1,13 @@
-﻿using System.Threading.Tasks; 
+﻿using System.IO;
+using System.Threading.Tasks; 
 using Volo.Abp.Application.Services; 
 using Volo.Abp.BlobStoring; 
-namespace FileActionsDemo
+namespace MMFinancial
 { 
     public class FileAppService: ApplicationService,IFileAppService
     { 
-        private readonly IBlobContainer<MyFileContainer> _fileContainer; 
-        public FileAppService(IBlobContainer < MyFileContainer > fileContainer){
+        private readonly IBlobContainer<TransactionContainer> _fileContainer; 
+        public FileAppService(IBlobContainer < TransactionContainer > fileContainer){
             _fileContainer = fileContainer; 
         } 
         public async Task SaveBlobAsync(SaveBlobInputDto input){
@@ -16,5 +17,11 @@ namespace FileActionsDemo
             var blob = await _fileContainer.GetAllBytesAsync(input.Name); 
             return new BlobDto{ Name = input.Name,Content = blob};
         } 
+
+        public async Task<StreamDto> GetFileStreamAsync(GetStreamRequestDto input)
+        {
+            Stream stream = await _fileContainer.GetAsync(input.Name);
+            return new StreamDto { Name = input.Name, _Stream = stream};
+        }
     } 
 }

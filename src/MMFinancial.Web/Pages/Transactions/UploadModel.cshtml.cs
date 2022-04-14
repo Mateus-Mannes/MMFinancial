@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Threading.Tasks;
-using FileActionsDemo;
+using MMFinancial;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
@@ -53,7 +53,7 @@ namespace MMFinancial.Web.Pages.Transactions
         public IFormFile File { get; set; }
 
         [Required]
-        [Display(Name = "Filename")]
+        //[Display(Name = "Filename")]
         public string Name { get; set; }
     }
 }
