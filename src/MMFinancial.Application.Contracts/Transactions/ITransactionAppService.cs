@@ -11,6 +11,7 @@ namespace MMFinancial.Transactions
     public interface ITransactionAppService : IApplicationService
     {
         Task<TransactionDto> CreateTransactionAsync(CreateTransactionDto input);
+        Task<bool> hasDate(DateTime date);
         // todo Task<TransactionDto> GetTransactionAsync();
     }
 }

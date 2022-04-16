@@ -18,22 +18,16 @@ namespace MMFinancial.Transactions
             _transactionRepository = transactionRepository;
         }
 
+        public async Task<bool> hasDate(DateTime date)
+        {
+            return await _transactionRepository.AnyAsync(x => x._DateTime.Date == date.Date);
+        }
+
         public async Task<TransactionDto> CreateTransactionAsync(CreateTransactionDto input)
         {
             Transaction newTransaction = new Transaction(GuidGenerator.Create(), input.BankFrom, input.AgencyFrom, input.AccountFrom, input.BankTo, input.AgencyTo, input.AccounTo, input.Value, input._DateTime
                 );
-            //    bankfrom = input.bankfrom,
-            //    agencyfrom = input.agencyfrom,
-            //    accountfrom = input.accountfrom,
-            //    bankto = input.bankto,
-            //    agencyto = input.agencyto,
-            //    accounto = input.accounto,
-            //    value = input.value,
-            //    _datetime = input._datetime
-            //};
-
              await _transactionRepository.InsertAsync(newTransaction);
-
             return new TransactionDto
             {
                 BankFrom = input.BankFrom,

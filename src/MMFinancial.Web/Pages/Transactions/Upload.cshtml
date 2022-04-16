@@ -16,7 +16,12 @@
                 <form method="post" enctype="multipart/form-data">
                     @if(Model.EmptyFile){
                         <div class="alert alert-danger" role="alert">
-                          Choose a non empty file
+                          Choose a non empty file !
+                        </div>
+                        }
+                    @if(Model.AlreadyUploadedDate){
+                        <div class="alert alert-danger" role="alert">
+                          Transactions from this day are already uploaded !
                         </div>
                         }
                     <div hidden>

@@ -32,6 +32,11 @@ namespace MMFinancial.Transactions
             Value = value;
             _DateTime = dateTime;
         }
+
+        public bool isInDate(string shortDateString)
+        {
+            return shortDateString == _DateTime.ToShortDateString();
+        }
     }
 
 }
