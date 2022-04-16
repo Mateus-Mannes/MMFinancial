@@ -3,7 +3,7 @@
 @model MMFinancial.Web.Pages.Transactions.UploadModel
 
 @section scripts{
-    <abp-script src="/Pages/Transactions/Upload.js" />
+<abp-script src="/Pages/Transactions/Upload.js" />
 }
 
 <abp-card>
@@ -14,16 +14,18 @@
         <abp-row>
             <abp-column>
                 <form method="post" enctype="multipart/form-data">
-                    @if(Model.EmptyFile){
+                    @if (Model.EmptyFile)
+                    {
                         <div class="alert alert-danger" role="alert">
-                          Choose a non empty file !
+                            Choose a non empty file !
                         </div>
-                        }
-                    @if(Model.AlreadyUploadedDate){
+                    }
+                    @if (Model.AlreadyUploadedDate)
+                    {
                         <div class="alert alert-danger" role="alert">
-                          Transactions from this day are already uploaded !
+                            Transactions from this day are already uploaded !
                         </div>
-                        }
+                    }
                     <div hidden>
                         <abp-input asp-for="UploadFileDto.Name"></abp-input>
                     </div>
@@ -32,19 +34,32 @@
                     <input type="submit" class="btn btn-info" />
                 </form>
             </abp-column>
-
-            @*<abp-column style="border-left: 1px dotted gray">
-                <h3>Download File</h3>
-                <hr />
-                <form id="DownloadFile">
-                    <div class="form-group">
-                        <label for="fileName">Filename</label><span> * </span>
-                        <input type="text" id="fileName" name="fileName" class="form-control ">
-                    </div>
-
-                    <input type="submit" class="btn btn-info"/>
-                </form>
-            </abp-column>*@
         </abp-row>
+        <br />
+        <abp-row>
+            <abp-column>
+                <abp-card-header>
+                    <h3>Uploads History</h3>
+                </abp-card-header>
+                <abp-table>
+                    <thead>
+                        <tr>
+                            <th scope="Column">Trasaction Date</th>
+                            <th scope="Column">Upload Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var upload in Model.UploadsList)
+                        {
+                            <tr>
+                                <td>@upload.TransactionDate.ToString("dd/MM/yyyy")</td>
+                                <td>@upload.UploadDate.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
     </abp-card-body>
 </abp-card>

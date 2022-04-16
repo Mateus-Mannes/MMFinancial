@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 using System;
 using MMFinancial.Transactions;
+using System.Collections.Generic;
 
 namespace MMFinancial.Web.Pages.Transactions
 {
@@ -21,6 +22,7 @@ namespace MMFinancial.Web.Pages.Transactions
         public bool AlreadyUploadedDate { get; set; }
 
         public bool EmptyFile { get; set; }
+        public IEnumerable<UploadDto> UploadsList { get; set; }
 
         public UploadModel(IFileAppService fileAppService, ITransactionAppService transactionAppService)
         {
@@ -28,13 +30,14 @@ namespace MMFinancial.Web.Pages.Transactions
             _transactionAppService = transactionAppService;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
             EmptyFile = false;
             AlreadyUploadedDate = false;
             using (var stream = UploadFileDto.File.OpenReadStream())
@@ -91,7 +94,8 @@ namespace MMFinancial.Web.Pages.Transactions
                         Content = content
                     }
                 );
-            }           
+            }
+            UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
             return Page();
         }
     }

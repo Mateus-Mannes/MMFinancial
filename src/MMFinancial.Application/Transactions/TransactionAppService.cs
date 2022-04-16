@@ -23,6 +23,16 @@ namespace MMFinancial.Transactions
             return await _transactionRepository.AnyAsync(x => x._DateTime.Date == date.Date);
         }
 
+        public async Task<IEnumerable<UploadDto>> GetUploadsHistoryAsync()
+        {
+            IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
+            IEnumerable<UploadDto> uploads = queryable
+                .Select(x => new UploadDto { TransactionDate = x._DateTime.Date, UploadDate = x.CreationTime.Date })
+                .OrderBy(x => x.TransactionDate).Distinct();
+            return uploads;
+
+        }
+
         public async Task<TransactionDto> CreateTransactionAsync(CreateTransactionDto input)
         {
             Transaction newTransaction = new Transaction(GuidGenerator.Create(), input.BankFrom, input.AgencyFrom, input.AccountFrom, input.BankTo, input.AgencyTo, input.AccounTo, input.Value, input._DateTime

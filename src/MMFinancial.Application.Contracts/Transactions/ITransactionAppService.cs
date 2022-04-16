@@ -12,6 +12,8 @@ namespace MMFinancial.Transactions
     {
         Task<TransactionDto> CreateTransactionAsync(CreateTransactionDto input);
         Task<bool> hasDate(DateTime date);
+
+        Task<IEnumerable<UploadDto>> GetUploadsHistoryAsync();
         // todo Task<TransactionDto> GetTransactionAsync();
     }
 }
