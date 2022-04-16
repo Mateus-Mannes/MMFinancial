@@ -9,7 +9,7 @@ using Volo.Abp.Application.Services;
 
 namespace MMFinancial.Transactions
 {
-    public class TransactionAppService : ITransactionAppService
+    public class TransactionAppService : ApplicationService, ITransactionAppService
     {
         private readonly ITransactionRepository _transactionRepository;
 
@@ -20,17 +20,17 @@ namespace MMFinancial.Transactions
 
         public async Task<TransactionDto> CreateTransactionAsync(CreateTransactionDto input)
         {
-            Transaction newTransaction = new Transaction
-            {
-                BankFrom = input.BankFrom,
-                AgencyFrom = input.AgencyFrom,
-                AccountFrom = input.AccountFrom,
-                BankTo = input.BankTo,
-                AgencyTo = input.AgencyTo,
-                AccounTo = input.AccounTo,
-                Value = input.Value,
-                _DateTime = input._DateTime
-            };
+            Transaction newTransaction = new Transaction(GuidGenerator.Create(), input.BankFrom, input.AgencyFrom, input.AccountFrom, input.BankTo, input.AgencyTo, input.AccounTo, input.Value, input._DateTime
+                );
+            //    bankfrom = input.bankfrom,
+            //    agencyfrom = input.agencyfrom,
+            //    accountfrom = input.accountfrom,
+            //    bankto = input.bankto,
+            //    agencyto = input.agencyto,
+            //    accounto = input.accounto,
+            //    value = input.value,
+            //    _datetime = input._datetime
+            //};
 
              await _transactionRepository.InsertAsync(newTransaction);
 

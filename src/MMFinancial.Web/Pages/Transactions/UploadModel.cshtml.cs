@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 using System;
+using MMFinancial.Transactions;
 
 namespace MMFinancial.Web.Pages.Transactions
 {
@@ -15,14 +16,16 @@ namespace MMFinancial.Web.Pages.Transactions
         public UploadFileDto UploadFileDto { get; set; }
 
         private readonly IFileAppService _fileAppService;
+        private readonly ITransactionAppService _transactionAppService;
 
         public bool Uploaded { get; set; } = false;
 
         public bool EmptyFile { get; set; }
 
-        public UploadModel(IFileAppService fileAppService)
+        public UploadModel(IFileAppService fileAppService, ITransactionAppService transactionAppService)
         {
             _fileAppService = fileAppService;
+            _transactionAppService = transactionAppService;
         }
 
         public void OnGet()
@@ -61,7 +64,24 @@ namespace MMFinancial.Web.Pages.Transactions
             while (line != null)
             {
                 Console.WriteLine(line);
+                CreateTransactionDto createTransactionDto = new CreateTransactionDto
+                {
+                    BankFrom = lineItems[0],
+                    BankTo = lineItems[3],
+                    AccountFrom = lineItems[2],
+                    AccounTo = lineItems[5],
+                    AgencyFrom = lineItems[1],
+                    AgencyTo = lineItems[4],
+                    Value = double.Parse(lineItems[6]),
+                    _DateTime = DateTime.Parse(lineItems[7])
+                };
+                await _transactionAppService.CreateTransactionAsync(createTransactionDto);
                 line = sr.ReadLine();
+                if(line != null)
+                {
+                    lineItems = line.Split(',');
+                }
+                
             }
             
 
