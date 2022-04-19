@@ -6,9 +6,11 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Application.Services;
+using MMFinancial.Permissions;
 
 namespace MMFinancial.Transactions
 {
+    [Authorize(MMFinancialPermissions.UserPermission)]
     public class TransactionAppService : ApplicationService, ITransactionAppService
     {
         private readonly ITransactionRepository _transactionRepository;

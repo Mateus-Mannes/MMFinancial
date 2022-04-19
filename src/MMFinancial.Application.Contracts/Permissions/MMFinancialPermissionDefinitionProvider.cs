@@ -10,7 +10,7 @@ public class MMFinancialPermissionDefinitionProvider : PermissionDefinitionProvi
     {
         var myGroup = context.AddGroup(MMFinancialPermissions.GroupName);
         //Define your own permissions here. Example:
-        //myGroup.AddPermission(MMFinancialPermissions.MyPermission1, L("Permission:MyPermission1"));
+        myGroup.AddPermission(MMFinancialPermissions.UserPermission, L("Permission:UserPermission"));
     }
 
     private static LocalizableString L(string name)

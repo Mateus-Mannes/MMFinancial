@@ -1,9 +1,12 @@
-﻿using System.IO;
+﻿using Microsoft.AspNetCore.Authorization;
+using MMFinancial.Permissions;
+using System.IO;
 using System.Threading.Tasks; 
 using Volo.Abp.Application.Services; 
 using Volo.Abp.BlobStoring; 
 namespace MMFinancial
-{ 
+{
+    [Authorize(MMFinancialPermissions.UserPermission)]
     public class FileAppService: ApplicationService,IFileAppService
     { 
         private readonly IBlobContainer<TransactionContainer> _fileContainer; 

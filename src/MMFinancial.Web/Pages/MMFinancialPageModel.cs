@@ -10,5 +10,7 @@ public abstract class MMFinancialPageModel : AbpPageModel
     protected MMFinancialPageModel()
     {
         LocalizationResourceType = typeof(MMFinancialResource);
+
+
     }
 }
