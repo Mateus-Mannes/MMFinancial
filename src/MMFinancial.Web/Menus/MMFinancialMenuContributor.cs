@@ -45,5 +45,19 @@ public class MMFinancialMenuContributor : IMenuContributor
 
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 2);
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
+
+        context.Menu.AddItem(
+    new ApplicationMenuItem(
+        "Transactions",
+        l["Menu:MMFinancial"],
+        icon: "fa fa-book"
+    ).AddItem(
+        new ApplicationMenuItem(
+            "MMFinancial.Transactions.Upload",
+            l["Menu:Upload"],
+            url: "/Transactions/Upload"
+        )
+    )
+);
     }
 }

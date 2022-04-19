@@ -37,6 +37,8 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using MMFinancial.Permissions;
 
 namespace MMFinancial.Web;
 
@@ -69,6 +71,8 @@ public class MMFinancialWebModule : AbpModule
                 typeof(MMFinancialWebModule).Assembly
             );
         });
+
+
     }
 
     public override void ConfigureServices(ServiceConfigurationContext context)
@@ -85,6 +89,11 @@ public class MMFinancialWebModule : AbpModule
         ConfigureNavigationServices();
         ConfigureAutoApiControllers();
         ConfigureSwaggerServices(context.Services);
+
+        Configure<RazorPagesOptions>(options =>
+        {
+            options.Conventions.AuthorizePage("/Transactions/Upload", MMFinancialPermissions.UserPermission);
+        });
     }
 
     private void ConfigureUrls(IConfiguration configuration)
