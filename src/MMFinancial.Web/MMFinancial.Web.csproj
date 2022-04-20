@@ -16,13 +16,13 @@
 
   <ItemGroup>
     <Compile Remove="Logs\**" />
+    <Compile Remove="Pages\Identity\**" />
     <Content Remove="Logs\**" />
+    <Content Remove="Pages\Identity\**" />
     <EmbeddedResource Remove="Logs\**" />
+    <EmbeddedResource Remove="Pages\Identity\**" />
     <None Remove="Logs\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Pages\Identity\Users\Index.cshtml.cs" />
+    <None Remove="Pages\Identity\**" />
   </ItemGroup>
 
   <ItemGroup>

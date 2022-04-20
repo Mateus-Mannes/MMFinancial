@@ -6,17 +6,22 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Volo.Abp;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
 using Volo.Abp.Identity;
 using Volo.Abp.Validation;
+using System.Linq;
+using Volo.Abp.Domain.Repositories;
 
 [Volo.Abp.DependencyInjection.Dependency(ReplaceServices = true)]
 [ExposeServices(typeof(IIdentityUserAppService), typeof(IdentityUserAppService), typeof(AppIdentityUserAppService))]
 public class AppIdentityUserAppService : IdentityUserAppService
 {
     //...
+    private readonly IRepository<IdentityUser> _appIdentityUserRepository;
     public AppIdentityUserAppService(
+        IRepository<IdentityUser> appIdentityUserRepository,
         IdentityUserManager userManager,
         IIdentityUserRepository userRepository,
         IIdentityRoleRepository roleRepository,
@@ -27,8 +32,19 @@ public class AppIdentityUserAppService : IdentityUserAppService
         roleRepository,
         identityOptions)
     {
+        _appIdentityUserRepository = appIdentityUserRepository;
     }
+    public async override Task<PagedResultDto<IdentityUserDto>> GetListAsync(GetIdentityUsersInput input)
+    {
+        IQueryable<IdentityUser> queryable = await _appIdentityUserRepository.GetQueryableAsync();
+        var count = await UserRepository.GetCountAsync(input.Filter);
+        List<IdentityUser> list = queryable.Where(x => x.Email != "admin@abp.io").ToList();
 
+        return new PagedResultDto<IdentityUserDto>(
+            count,
+            ObjectMapper.Map<List<IdentityUser>, List<IdentityUserDto>>(list)
+        );
+    }
     public async override Task<IdentityUserDto> UpdateAsync(Guid id, IdentityUserUpdateDto input)
     {
         if (await IsAdmin(id))
