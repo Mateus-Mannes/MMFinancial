@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
 using Volo.Abp.Identity;
@@ -28,16 +29,32 @@ public class AppIdentityUserAppService : IdentityUserAppService
     {
     }
 
+    public async override Task<IdentityUserDto> UpdateAsync(Guid id, IdentityUserUpdateDto input)
+    {
+        if (await IsAdmin(id))
+        {
+            throw new BusinessException(
+                "Cant edit Admin"
+            );
+        }
+        return await base.UpdateAsync(id, input);
+    }
+
     public  async override Task DeleteAsync(Guid id)
     {
-        var user = await UserManager.FindByIdAsync(id.ToString());
-        if (user.UserName == "admin")
+        if (await IsAdmin(id))
         {
-            throw new AbpValidationException(
+            throw new BusinessException(
                 "Cant delte Admin"
             );
         }
 
         await base.DeleteAsync(id);
+    }
+
+    public async Task<bool> IsAdmin(Guid id)
+    {
+        var user = await UserManager.FindByIdAsync(id.ToString());
+        return user.Email == "admin@abp.io";
     }
 }
