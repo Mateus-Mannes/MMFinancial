@@ -4,6 +4,8 @@ using Volo.Abp.Emailing;
 using Volo.Abp.Application.Services;
 using System.Net.Mail;
 using System.Net;
+using System;
+using Volo.Abp;
 
 namespace MMFinancial.Transactions
 {
@@ -11,6 +13,8 @@ namespace MMFinancial.Transactions
     {
         public static async Task SendEmailAsync(string title,string text, string userEmail)
         {
+            try
+            {
                 MailMessage message = new MailMessage();
                 SmtpClient smtp = new SmtpClient();
                 message.From = new MailAddress("mmfinancialapp@hotmail.com");
@@ -25,6 +29,7 @@ namespace MMFinancial.Transactions
                 smtp.Credentials = new NetworkCredential("mmfinancialapp@hotmail.com", "financial123");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
+            }catch(Exception){ }
+            }
         }
     }
-}

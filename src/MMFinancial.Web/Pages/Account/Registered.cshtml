@@ -1,0 +1,19 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@using Volo.Abp.Account.Settings
+@using Volo.Abp.Settings
+@model Volo.Abp.Account.Web.Pages.Account.LoginModel
+@inject IHtmlLocalizer<AccountResource> L
+@inject Volo.Abp.Settings.ISettingProvider SettingProvider
+<script>
+document.getElementsByClassName('card shadow-sm rounded mb-3')[0].style.display = "none"
+</script>
+<div class="card mt-3 shadow-sm rounded">
+    <div class="card-body p-5">
+        <h7>Now you are registerd ! Your password have  been send to your email by mmfinancialapp@hotmaill.com, please check the junk box. Then make the login</h7>
+        <a href = "/Account/Login">
+        <abp-button button-type="Primary" class="btn-lg mt-4">Back to Login</abp-button>
+        </a>
+    </div>
+</div>
