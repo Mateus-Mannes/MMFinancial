@@ -1,0 +1,47 @@
+﻿@page "{date?}"
+@model MMFinancial.Web.Pages.Transactions.DetailModel
+@{
+}
+
+<abp-card>
+    <abp-card-header>
+        <h3>Traction Details</h3>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-row>
+            <abp-column>
+               <p><font size="4"><b>Trasaction Date:</b> @Model.Transaction._DateTime.ToString("dd/MM/yyyy")</font></p>
+                <p><font size="4"><b>Creator: </b>@Model.User.UserName</font></p>
+                <p><font size="4"><b>Uploaded in:</b> @Model.Transaction.CreationTime.ToString("dd/MM/yyyy HH:mm:ss")</font></p>
+            </abp-column>
+        </abp-row>
+        <br />
+        <abp-row>
+            <abp-column>
+                <abp-table>
+                    <thead>
+                        <tr>
+                            <th scope="Column">Bank</th>
+                            <th scope="Column">Account</th>
+                            <th scope="Column">Agency</th>
+                             <th scope="Column">Bank</th>
+                            <th scope="Column">Account</th>
+                            <th scope="Column">Agency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>@Model.Transaction.BankFrom</td>
+                                <td>@Model.Transaction.AccountFrom</td>
+                                <td>@Model.Transaction.AgencyFrom</td>
+                                <td>@Model.Transaction.BankTo</td>
+                                <td>@Model.Transaction.AccounTo</td>
+                                <td>@Model.Transaction.AgencyTo</td>
+                            </tr>
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
+    </abp-card-body>
+</abp-card>

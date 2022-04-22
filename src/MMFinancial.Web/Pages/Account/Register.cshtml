@@ -1,0 +1,37 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Account.Localization
+@model  MMFinancial.Web.Pages.Account.RegisterAppModel
+@inject IHtmlLocalizer<AccountResource> L
+<script>
+document.getElementsByClassName('card shadow-sm rounded mb-3')[0].style.display = "none"
+</script>
+<div class="card mt-3 shadow-sm rounded">
+    <div class="card-body p-5">
+        <h4>@L["Register"]</h4>
+       @* <strong>
+            @L["AlreadyRegistered"]
+            <a href="@Url.Page("./Login", new {returnUrl = Model.ReturnUrl, returnUrlHash = Model.ReturnUrlHash})" class="text-decoration-none">@L["Login"]</a>
+        </strong>*@
+
+        @if (Model.alreadyRegistered)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            User name or email alredy registered
+                        </div>
+                    }
+        <form method="post" class="mt-4">
+            @if (!Model.IsExternalLogin)
+            {
+                <abp-input asp-for="Input.UserName" auto-focus="true"/>
+            }
+
+            <abp-input asp-for="Input.EmailAddress"/>
+
+          
+            <div class="d-grid gap-2">
+                <abp-button button-type="Primary" type="submit" class="btn-lg mt-4">@L["Register"]</abp-button>
+            </div>
+        </form>
+    </div>
+</div>

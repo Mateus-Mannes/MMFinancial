@@ -1,0 +1,67 @@
+﻿@page
+@using MMFinancial.Web.Pages.Transactions
+@model MMFinancial.Web.Pages.Transactions.UploadModel
+
+@section scripts{
+<abp-script src="/Pages/Transactions/Upload.js" />
+}
+
+<abp-card>
+    <abp-card-header>
+        <h3>Tractions File Upload</h3>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-row>
+            <abp-column>
+                <form method="post" enctype="multipart/form-data">
+                    @if (Model.EmptyFile)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Choose a non empty file !
+                        </div>
+                    }
+                    @if (Model.AlreadyUploadedDate)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Transactions from this day are already uploaded !
+                        </div>
+                    }
+                    <div hidden>
+                        <abp-input asp-for="UploadFileDto.Name"></abp-input>
+                    </div>
+                    <abp-input asp-for="UploadFileDto.File"></abp-input>
+
+                    <input type="submit" class="btn btn-info" />
+                </form>
+            </abp-column>
+        </abp-row>
+        <br />
+        <abp-row>
+            <abp-column>
+                <abp-card-header>
+                    <h3>Uploads History</h3>
+                </abp-card-header>
+                <abp-table>
+                    <thead>
+                        <tr>
+                            <th scope="Column">Trasaction Date</th>
+                            <th scope="Column">Upload Date</th>
+                            <th scope="Column"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var upload in Model.UploadsList)
+                        {
+                            <tr>
+                                <td>@upload.TransactionDate.ToString("dd/MM/yyyy")</td>
+                                <td>@upload.UploadDate.ToString("dd/MM/yyyy")</td>
+                                <td><a href="/Transactions/Detail/@upload.TransactionDate.ToString("MM-dd-yyyy")">Details</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
+    </abp-card-body>
+</abp-card>
