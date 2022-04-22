@@ -50,22 +50,8 @@ public class AppAccountAppService : AccountAppService
 
     public async override Task<IdentityUserDto> RegisterAsync(RegisterDto input)
     {
-        await CheckSelfRegistrationAsync();
-
-        await IdentityOptions.SetAsync();
-
-        var user = new Volo.Abp.Identity.IdentityUser(GuidGenerator.Create(), input.UserName, input.EmailAddress, CurrentTenant.Id);
-
-        input.MapExtraPropertiesTo(user);
-
-        Random random = new Random();
-        input.Password = (random.Next() % 1000000).ToString() + "FFa*";
-
-        (await UserManager.CreateAsync(user, input.Password)).CheckErrors();
-
-        await UserManager.SetEmailAsync(user, input.EmailAddress);
-        await UserManager.AddDefaultRolesAsync(user);
+        var user = await base.RegisterAsync(input);
         await AppEmailSender.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
-        return ObjectMapper.Map<Volo.Abp.Identity.IdentityUser, IdentityUserDto>(user);
+        return user;
     }
 }
