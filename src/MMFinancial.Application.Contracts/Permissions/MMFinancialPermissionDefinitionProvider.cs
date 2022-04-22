@@ -1,6 +1,8 @@
 ﻿using MMFinancial.Localization;
 using Volo.Abp.Authorization.Permissions;
+using Volo.Abp.Identity;
 using Volo.Abp.Localization;
+using static Volo.Abp.Identity.IdentityPermissions;
 
 namespace MMFinancial.Permissions;
 
@@ -10,7 +12,9 @@ public class MMFinancialPermissionDefinitionProvider : PermissionDefinitionProvi
     {
         var myGroup = context.AddGroup(MMFinancialPermissions.GroupName);
         //Define your own permissions here. Example:
-        myGroup.AddPermission(MMFinancialPermissions.UserPermission, L("Permission:UserPermission"));
+        var x = myGroup.AddPermission(MMFinancialPermissions.UserPermission, L("Permission:UserPermission"));
+      
+
     }
 
     private static LocalizableString L(string name)
