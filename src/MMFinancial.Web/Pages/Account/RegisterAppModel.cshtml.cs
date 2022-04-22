@@ -7,7 +7,6 @@ using Volo.Abp.Account;
 using System.ComponentModel.DataAnnotations;
 using Volo.Abp.Validation;
 using Volo.Abp.Auditing;
-using Volo.Abp.Identity;
 using System;
 using System.Linq;
 using Volo.Abp.Domain.Repositories;
