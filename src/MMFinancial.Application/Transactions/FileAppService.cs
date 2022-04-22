@@ -7,7 +7,7 @@ using Volo.Abp.BlobStoring;
 namespace MMFinancial
 {
     [Authorize(MMFinancialPermissions.UserPermission)]
-    public class FileAppService: ApplicationService,IFileAppService
+    public class FileAppService: ApplicationService, IFileAppService
     { 
         private readonly IBlobContainer<TransactionContainer> _fileContainer; 
         public FileAppService(IBlobContainer < TransactionContainer > fileContainer){
