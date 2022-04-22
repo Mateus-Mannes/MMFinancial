@@ -52,17 +52,7 @@ namespace MMFinancial.Transactions
             Transaction newTransaction = new Transaction(GuidGenerator.Create(), input.BankFrom, input.AgencyFrom, input.AccountFrom, input.BankTo, input.AgencyTo, input.AccounTo, input.Value, input._DateTime
                 );
              await _transactionRepository.InsertAsync(newTransaction);
-            return new TransactionDto
-            {
-                BankFrom = input.BankFrom,
-                AgencyFrom = input.AgencyFrom,
-                AccountFrom = input.AccountFrom,
-                BankTo = input.BankTo,
-                AgencyTo = input.AgencyTo,
-                AccounTo = input.AccounTo,
-                Value = input.Value,
-                _DateTime = input._DateTime
-            };
+            return ObjectMapper.Map<Transaction, TransactionDto>(newTransaction);
         }
     }
 }
