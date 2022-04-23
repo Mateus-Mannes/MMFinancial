@@ -10,9 +10,9 @@
     <abp-card-body>
         <abp-row>
             <abp-column>
-               <p><font size="4"><b>Trasaction Date:</b> @Model.Transaction._DateTime.ToString("dd/MM/yyyy")</font></p>
+               <p><font size="4"><b>Trasaction Date:</b> @Model.Transactions.First()._DateTime.ToString("dd/MM/yyyy")</font></p>
                 <p><font size="4"><b>Creator: </b>@Model._User.UserName</font></p>
-                <p><font size="4"><b>Uploaded in:</b> @Model.Transaction.CreationTime.ToString("dd/MM/yyyy HH:mm:ss")</font></p>
+                <p><font size="4"><b>Uploaded in:</b> @Model.Transactions.First().CreationTime.ToString("dd/MM/yyyy HH:mm:ss")</font></p>
             </abp-column>
         </abp-row>
         <br />
@@ -30,14 +30,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach( var Transaction in Model.Transactions){
                             <tr>
-                                <td>@Model.Transaction.BankFrom</td>
-                                <td>@Model.Transaction.AccountFrom</td>
-                                <td>@Model.Transaction.AgencyFrom</td>
-                                <td>@Model.Transaction.BankTo</td>
-                                <td>@Model.Transaction.AccounTo</td>
-                                <td>@Model.Transaction.AgencyTo</td>
+                                <td>@Transaction.BankFrom</td>
+                                <td>@Transaction.AccountFrom</td>
+                                <td>@Transaction.AgencyFrom</td>
+                                <td>@Transaction.BankTo</td>
+                                <td>@Transaction.AccounTo</td>
+                                <td>@Transaction.AgencyTo</td>
                             </tr>
+                            }
                     </tbody>
                 </abp-table>
             </abp-column>

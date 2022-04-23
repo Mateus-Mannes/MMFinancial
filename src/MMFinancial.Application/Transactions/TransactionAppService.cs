@@ -25,16 +25,16 @@ namespace MMFinancial.Transactions
             return await _transactionRepository.AnyAsync(x => x._DateTime.Date == date.Date);
         }
 
-        public async Task<TransactionDto> GetByDateAsync(string date)
+        public async Task<List<TransactionDto>> GetByDateAsync(string date)
         {
             IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
             DateTime _date = DateTime.Parse(date).Date;
-            Transaction transaction = null;
+            List<Transaction> transactions = new List<Transaction>();
             if (await hasDate(_date))
             {
-                transaction = queryable.Where(x => x._DateTime.Date == _date).First();
-            }
-            return ObjectMapper.Map<Transaction, TransactionDto>(transaction);
+                transactions = queryable.Where(x => x._DateTime.Date == _date).ToList();
+            } 
+            return ObjectMapper.Map<List<Transaction>, List<TransactionDto>>(transactions);
         }
 
         public async Task<IEnumerable<UploadDto>> GetUploadsHistoryAsync()
