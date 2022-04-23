@@ -16,13 +16,9 @@
 
   <ItemGroup>
     <Compile Remove="Logs\**" />
-    <Compile Remove="Pages\Identity\**" />
     <Content Remove="Logs\**" />
-    <Content Remove="Pages\Identity\**" />
     <EmbeddedResource Remove="Logs\**" />
-    <EmbeddedResource Remove="Pages\Identity\**" />
     <None Remove="Logs\**" />
-    <None Remove="Pages\Identity\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +48,11 @@
     <PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="5.2.0" />
     <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="5.2.0" />
     <PackageReference Include="Volo.Abp.SettingManagement.Web" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Identity\Users\" />
+    <Folder Include="Themes\Basic\Components\Toolbar\LanguageSwitch\" />
   </ItemGroup>
 
 </Project>

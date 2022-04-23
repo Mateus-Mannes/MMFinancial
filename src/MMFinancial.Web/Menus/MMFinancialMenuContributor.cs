@@ -22,7 +22,6 @@ public class MMFinancialMenuContributor : IMenuContributor
     {
         var administration = context.Menu.GetAdministration();
         var l = context.GetLocalizer<MMFinancialResource>();
-
         context.Menu.Items.Insert(
             0,
             new ApplicationMenuItem(
@@ -44,7 +43,7 @@ public class MMFinancialMenuContributor : IMenuContributor
         }
 
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 2);
-        administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
+       administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
 
         context.Menu.AddItem(
     new ApplicationMenuItem(

@@ -9,7 +9,7 @@ using Volo.Abp;
 
 namespace MMFinancial.Transactions
 {
-    public static class AppEmailSender
+    public static class EmailSenderService
     {
         public static async Task SendEmailAsync(string title,string text, string userEmail)
         {
