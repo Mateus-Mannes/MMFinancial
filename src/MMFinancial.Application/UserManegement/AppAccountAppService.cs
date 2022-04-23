@@ -51,7 +51,7 @@ public class AppAccountAppService : AccountAppService
     public async override Task<IdentityUserDto> RegisterAsync(RegisterDto input)
     {
         var user = await base.RegisterAsync(input);
-        await AppEmailSender.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
+        await EmailSenderService.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
         return user;
     }
 }

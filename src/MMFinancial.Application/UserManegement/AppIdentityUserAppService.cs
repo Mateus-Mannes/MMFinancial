@@ -21,6 +21,7 @@ using System.Net.Mail;
 using MMFinancial.Transactions;
 using Microsoft.AspNetCore.Identity;
 using Volo.Abp.ObjectMapping;
+using Microsoft.AspNetCore.Authorization;
 
 [Volo.Abp.DependencyInjection.Dependency(ReplaceServices = true)]
 [ExposeServices(typeof(IIdentityUserAppService), typeof(IdentityUserAppService), typeof(AppIdentityUserAppService))]
@@ -45,26 +46,23 @@ public class AppIdentityUserAppService : IdentityUserAppService
         _emailSender = emailSender;
         _appIdentityUserRepository = appIdentityUserRepository;
     }
+    protected async override Task UpdateUserByInput(Volo.Abp.Identity.IdentityUser user, IdentityUserCreateOrUpdateDtoBase input)
+    {
+        // SETAR ROLE NULL SE NAO TIVER PERMISSANO
+        var rolePermission = await AuthorizationService.AuthorizeAsync(IdentityPermissions.Users.ManagePermissions);
+        if (rolePermission.Succeeded == false)
+        {
+            input.RoleNames = null;
+        }
+        await base.UpdateUserByInput(user, input);
+    }
 
     public async override Task<IdentityUserDto> CreateAsync(IdentityUserCreateDto input)
     {
-        await IdentityOptions.SetAsync();
-        var user = new Volo.Abp.Identity.IdentityUser(
-            GuidGenerator.Create(),
-            input.UserName,
-            input.Email,
-            CurrentTenant.Id
-        );
-        input.MapExtraPropertiesTo(user);
-        (await UserManager.CreateAsync(user, input.Password)).CheckErrors();
-        await UpdateUserByInput(user, input);
-        (await UserManager.UpdateAsync(user)).CheckErrors();
-        await CurrentUnitOfWork.SaveChangesAsync();
 
-            await AppEmailSender.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
-     
-   
-        return ObjectMapper.Map<Volo.Abp.Identity.IdentityUser, IdentityUserDto>(user);
+        var user = await base.CreateAsync(input);
+        await EmailSenderService.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
+        return user;
     }
 
     public async override Task<PagedResultDto<IdentityUserDto>> GetListAsync(GetIdentityUsersInput input)

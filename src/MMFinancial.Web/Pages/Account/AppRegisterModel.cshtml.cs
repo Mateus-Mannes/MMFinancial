@@ -13,12 +13,12 @@ using Volo.Abp.Domain.Repositories;
 
 namespace MMFinancial.Web.Pages.Account
 {
-    public class RegisterAppModel : RegisterModel
+    public class AppRegisterModel : RegisterModel
     {
         public bool alreadyRegistered;
         private readonly IAccountAppService _accountAppService1;
         private readonly IRepository<IdentityUser> _identityUserRepository;
-        public RegisterAppModel(
+        public AppRegisterModel(
             IAccountAppService accountAppService,
             IAccountAppService accountAppService1,
             IRepository<IdentityUser> identityUserRepository
