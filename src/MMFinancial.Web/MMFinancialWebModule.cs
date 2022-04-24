@@ -93,6 +93,7 @@ public class MMFinancialWebModule : AbpModule
         Configure<RazorPagesOptions>(options =>
         {
             options.Conventions.AuthorizePage("/Transactions/Upload", MMFinancialPermissions.UserPermission);
+            options.Conventions.AuthorizePage("/Transactions/Detail", MMFinancialPermissions.UserPermission);
         });
     }
 
