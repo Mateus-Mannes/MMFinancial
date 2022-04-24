@@ -19,3 +19,14 @@ Registration of trasactions to Data Base
 
 Add a an uploads history table in the page
 
+# week 2
+
+Developing users crud
+
+Authorization
+
+Registration
+
+Transactions Details
+
+
