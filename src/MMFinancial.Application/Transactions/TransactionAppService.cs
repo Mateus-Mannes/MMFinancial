@@ -19,6 +19,24 @@ namespace MMFinancial.Transactions
         {
             _transactionRepository = transactionRepository;
         }
+
+        public async Task<List<AccountMovimentationDto>> GetSuspectAccounts(int month, int year)
+        {
+            IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
+            List<AccountMovimentationDto> accounts = new List<AccountMovimentationDto>();
+            accounts = queryable
+                .Where(x => x._DateTime.Month == month && x._DateTime.Year == year)
+                .GroupBy(x => new {x.BankFrom, x.AgencyFrom, x.AccountFrom})
+                .Select(y => new AccountMovimentationDto { 
+                    Bank = y.First().BankFrom, 
+                    Agency = y.First().AgencyFrom, 
+                    Account = y.First().AccountFrom, 
+                    ValueMoved = y.Sum(k => k.Value)
+                }).Where(h => h.ValueMoved > 1000000).ToList();
+            return accounts;
+        }
+
+
         public async Task<List<TransactionDto>> GetSuspectTransactions(int month, int year)
         {
             IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
