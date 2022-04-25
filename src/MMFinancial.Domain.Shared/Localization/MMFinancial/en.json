@@ -7,6 +7,7 @@
     "Permission:UserPermission": "User",
     "Menu:MMFinancial": "Transactions",
     "Menu:Upload": "Uploads",
-    "Permission:IdentityPermissionApp": "IdentityPermissionApp"
+    "Permission:IdentityPermissionApp": "IdentityPermissionApp",
+    "Menu:Suspect" :  "Suspect Transactions"
   }
 }

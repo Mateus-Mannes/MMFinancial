@@ -94,6 +94,7 @@ public class MMFinancialWebModule : AbpModule
         {
             options.Conventions.AuthorizePage("/Transactions/Upload", MMFinancialPermissions.UserPermission);
             options.Conventions.AuthorizePage("/Transactions/Detail", MMFinancialPermissions.UserPermission);
+            options.Conventions.AuthorizePage("/Transactions/Suspect", MMFinancialPermissions.UserPermission);
         });
     }
 

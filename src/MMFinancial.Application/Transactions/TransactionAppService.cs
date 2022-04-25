@@ -20,21 +20,65 @@ namespace MMFinancial.Transactions
             _transactionRepository = transactionRepository;
         }
 
+        public async Task<List<AgencyMovementsDto>> GetSuspectAgencies(int month, int year)
+        {
+            IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
+            List<AgencyMovementsDto> agenciesFrom = new List<AgencyMovementsDto>();
+            agenciesFrom = queryable
+                .Where(x => x._DateTime.Month == month && x._DateTime.Year == year)
+                .GroupBy(x => new { x.BankFrom, x.AgencyFrom })
+                .Select(x => new AgencyMovementsDto
+                {
+                    Bank = x.First().BankFrom,
+                    Agency = x.First().AgencyFrom,
+                    ValueMoved = x.Sum(y => y.Value),
+                    Type = "Entry"
+                }).Where(x => x.ValueMoved > 1000000000).ToList();
+
+            List<AgencyMovementsDto> agenciesTo = new List<AgencyMovementsDto>();
+            agenciesTo = queryable
+                .Where(x => x._DateTime.Month == month && x._DateTime.Year == year)
+                .GroupBy(x => new { x.BankTo, x.AgencyTo })
+                .Select(x => new AgencyMovementsDto
+                {
+                    Bank = x.First().BankTo,
+                    Agency = x.First().AgencyTo,
+                    ValueMoved = x.Sum(y => y.Value),
+                    Type = "Out"
+                }).Where(x => x.ValueMoved > 1000000000).ToList();
+
+            return agenciesFrom.Concat(agenciesTo).ToList();
+        }
+
         public async Task<List<AccountMovimentationDto>> GetSuspectAccounts(int month, int year)
         {
             IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
-            List<AccountMovimentationDto> accounts = new List<AccountMovimentationDto>();
-            accounts = queryable
+            List<AccountMovimentationDto> accountsFrom = new List<AccountMovimentationDto>();
+            accountsFrom = queryable
                 .Where(x => x._DateTime.Month == month && x._DateTime.Year == year)
                 .GroupBy(x => new {x.BankFrom, x.AgencyFrom, x.AccountFrom})
-                .Select(y => new AccountMovimentationDto { 
-                    Bank = y.First().BankFrom, 
-                    Agency = y.First().AgencyFrom, 
-                    Account = y.First().AccountFrom, 
-                    ValueMoved = y.Sum(k => k.Value),
+                .Select(x => new AccountMovimentationDto { 
+                    Bank = x.First().BankFrom, 
+                    Agency = x.First().AgencyFrom, 
+                    Account = x.First().AccountFrom, 
+                    ValueMoved = x.Sum(y => y.Value),
                     Type = "Entry"
-                }).Where(h => h.ValueMoved > 1000000).ToList();
-            return accounts;
+                }).Where(x => x.ValueMoved > 1000000).ToList();
+
+            List<AccountMovimentationDto> accountsTo = new List<AccountMovimentationDto>();
+            accountsTo = queryable
+                .Where(x => x._DateTime.Month == month && x._DateTime.Year == year)
+                .GroupBy(x => new { x.BankTo, x.AgencyTo, x.AccounTo })
+                .Select(x => new AccountMovimentationDto
+                {
+                    Bank = x.First().BankTo,
+                    Agency = x.First().AgencyTo,
+                    Account = x.First().AccounTo,
+                    ValueMoved = x.Sum(y => y.Value),
+                    Type = "Out"
+                }).Where(x => x.ValueMoved > 1000000).ToList();
+            
+            return accountsFrom.Concat(accountsTo).ToList();
         }
 
 

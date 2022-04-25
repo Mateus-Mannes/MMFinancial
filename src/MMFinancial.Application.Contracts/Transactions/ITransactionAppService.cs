@@ -17,5 +17,6 @@ namespace MMFinancial.Transactions
         Task<List<TransactionDto>> GetByDateAsync(string date);
         Task<List<TransactionDto>> GetSuspectTransactions(int month, int year);
         Task<List<AccountMovimentationDto>> GetSuspectAccounts(int month, int year);
+        Task<List<AgencyMovementsDto>> GetSuspectAgencies(int month, int year);
     }
 }
