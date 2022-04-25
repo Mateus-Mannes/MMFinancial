@@ -74,6 +74,47 @@
                 </abp-table>
             </abp-column>
         </abp-row>
+
+        <br/>
+        <abp-row>
+            <abp-column>
+                  <h5>Suspect Accounts</h5>
+                    
+    
+            </abp-column>
+        </abp-row>
+
+        <abp-row>
+            <abp-column>
+                <abp-table>
+                    <thead>
+
+                        <tr>
+                            <th scope="Column">Bank</th>
+                            <th scope="Column">Account</th>
+                            <th scope="Column">Agency</th>
+                            <th scope="Column">Type</th>
+                            <th scope="Column">Tootal Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @foreach( var account in Model.Accounts){
+                            <tr>
+                                <td>@account.Bank</td>
+                                <td>@account.Account</td>
+                                <td>@account.Agency</td>
+                                <td>@account.Type</td>
+                                <td>@account.ValueMoved.ToString("C2", new CultureInfo("en-US"))</td>
+                            </tr>
+                            }
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
+
+
          </abp-card-body>
     }
 

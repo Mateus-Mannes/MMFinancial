@@ -13,6 +13,7 @@ namespace MMFinancial.Web.Pages.Transactions
     {
         private readonly ITransactionAppService _transactionAppService;
         public List<TransactionDto> Transactions;
+        public List<AccountMovimentationDto> Accounts;
         [BindProperty]
         [Display(Name = "Month")]
         [Required]
@@ -28,6 +29,7 @@ namespace MMFinancial.Web.Pages.Transactions
         public async Task<IActionResult> OnPostAsync()
         {
             Transactions = await _transactionAppService.GetSuspectTransactions(_Date.Month, _Date.Year);
+            Accounts = await _transactionAppService.GetSuspectAccounts(_Date.Month, _Date.Year);
             return Page();
         }
     }

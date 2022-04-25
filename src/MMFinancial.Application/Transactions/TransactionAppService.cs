@@ -31,7 +31,8 @@ namespace MMFinancial.Transactions
                     Bank = y.First().BankFrom, 
                     Agency = y.First().AgencyFrom, 
                     Account = y.First().AccountFrom, 
-                    ValueMoved = y.Sum(k => k.Value)
+                    ValueMoved = y.Sum(k => k.Value),
+                    Type = "Entry"
                 }).Where(h => h.ValueMoved > 1000000).ToList();
             return accounts;
         }
