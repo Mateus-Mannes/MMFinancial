@@ -19,6 +19,13 @@ namespace MMFinancial.Transactions
         {
             _transactionRepository = transactionRepository;
         }
+        public async Task<List<TransactionDto>> GetSuspectTransactions(int month, int year)
+        {
+            IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
+            List<Transaction> transactions = new List<Transaction>();
+            transactions = queryable.Where(x => x.Value > 100000 && x._DateTime.Month == month && x._DateTime.Year == year).ToList();
+            return ObjectMapper.Map<List<Transaction>, List<TransactionDto>>(transactions);
+        }
 
         public async Task<bool> hasDate(DateTime date)
         {

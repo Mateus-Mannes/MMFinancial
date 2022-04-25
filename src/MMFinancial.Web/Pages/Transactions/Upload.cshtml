@@ -50,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var upload in Model.UploadsList)
+                        @foreach (var upload in Model.UploadsList.OrderByDescending(i => i.TransactionDate))
                         {
                             <tr>
                                 <td>@upload.TransactionDate.ToString("dd/MM/yyyy")</td>
