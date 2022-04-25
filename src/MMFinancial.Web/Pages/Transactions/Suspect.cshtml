@@ -1,0 +1,166 @@
+﻿@page
+@using System.Globalization;
+@using MMFinancial.Web.Pages.Transactions
+@model MMFinancial.Web.Pages.Transactions.SuspectModel
+@{
+}
+
+
+
+<abp-card>
+    <abp-card-header>
+        <h3>Suspect Transactions Analysis</h3>
+    </abp-card-header>
+
+    <abp-card-body>
+        <abp-row>
+            <abp-column>
+                 <form method="post">
+                     @if (Model.NoTransaction)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            This month has no uploads ! Choose another.
+                        </div>
+                    }
+                    <h5>Choose a motnh to analyze:</h5>
+                      <abp-input asp-for="_Date" type="month"></abp-input>
+                    <button type="submit">Search</button>
+                </form>
+            </abp-column>
+        </abp-row>
+
+    </abp-card-body>
+
+    @if (Model.Request.Method == "POST" && !Model.NoTransaction){
+        <abp-card-body>
+        <abp-row>
+            <abp-column>
+                  <h5>Suspect Transactions</h5>
+                    
+    
+            </abp-column>
+        </abp-row>
+
+        <abp-row>
+            <abp-column>
+                <abp-table>
+                    <thead>
+                        <tr>
+                            <td colspan=3> Origin </td>
+                            <td colspan=1 style="border: none"> </td>
+                            <td colspan=3> Destiny </td>
+                        </tr>
+                        <tr>
+                            <th scope="Column">Bank</th>
+                            <th scope="Column">Account</th>
+                            <th scope="Column">Agency</th>
+                            <th scope="Column"></th>
+                             <th scope="Column">Bank</th>
+                            <th scope="Column">Account</th>
+                            <th scope="Column">Agency</th>
+                            <th scope="Column"></th>
+                            <th scope="Column">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @foreach( var Transaction in Model.Transactions){
+                            <tr>
+                                <td>@Transaction.BankFrom</td>
+                                <td>@Transaction.AccountFrom</td>
+                                <td>@Transaction.AgencyFrom</td>
+                                <td></td>
+                                <td>@Transaction.BankTo</td>
+                                <td>@Transaction.AccounTo</td>
+                                <td>@Transaction.AgencyTo</td>
+                                <td></td>
+                                <td>@Transaction.Value.ToString("C2", new CultureInfo("en-US"))</td>
+                            </tr>
+                            }
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
+        <br/>
+        <abp-row>
+            <abp-column>
+                  <h5>Suspect Accounts</h5>
+                    
+    
+            </abp-column>
+        </abp-row>
+
+        <abp-row>
+            <abp-column>
+                <abp-table>
+                    <thead>
+
+                        <tr>
+                            <th scope="Column">Bank</th>
+                            <th scope="Column">Account</th>
+                            <th scope="Column">Agency</th>
+                            <th scope="Column">Type</th>
+                            <th scope="Column">Tootal Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @foreach( var account in Model.Accounts){
+                            <tr>
+                                <td>@account.Bank</td>
+                                <td>@account.Account</td>
+                                <td>@account.Agency</td>
+                                <td>@account.Type</td>
+                                <td>@account.ValueMoved.ToString("C2", new CultureInfo("en-US"))</td>
+                            </tr>
+                            }
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
+
+
+        <br/>
+        <abp-row>
+            <abp-column>
+                  <h5>Suspect Agencies</h5>
+                    
+    
+            </abp-column>
+        </abp-row>
+
+        <abp-row>
+            <abp-column>
+                <abp-table>
+                    <thead>
+
+                        <tr>
+                            <th scope="Column">Bank</th>
+                            <th scope="Column">Agency</th>
+                            <th scope="Column">Type</th>
+                            <th scope="Column">Tootal Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        @foreach( var agencie in Model.Agencies){
+                            <tr>
+                                <td>@agencie.Bank</td>
+                                <td>@agencie.Agency</td>
+                                <td>@agencie.Type</td>
+                                <td>@agencie.ValueMoved.ToString("C2", new CultureInfo("en-US"))</td>
+                            </tr>
+                            }
+                    </tbody>
+                </abp-table>
+            </abp-column>
+        </abp-row>
+
+
+
+         </abp-card-body>
+    }
+
+</abp-card>

@@ -15,6 +15,8 @@ namespace MMFinancial.Transactions
 
         Task<IEnumerable<UploadDto>> GetUploadsHistoryAsync();
         Task<List<TransactionDto>> GetByDateAsync(string date);
-        // todo Task<TransactionDto> GetTransactionAsync();
+        Task<List<TransactionDto>> GetSuspectTransactions(int month, int year);
+        Task<List<AccountMovimentationDto>> GetSuspectAccounts(int month, int year);
+        Task<List<AgencyMovementsDto>> GetSuspectAgencies(int month, int year);
     }
 }

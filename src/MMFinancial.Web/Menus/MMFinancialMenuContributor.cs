@@ -56,7 +56,14 @@ public class MMFinancialMenuContributor : IMenuContributor
             l["Menu:Upload"],
             url: "/Transactions/Upload"
         )
+    ).AddItem(
+        new ApplicationMenuItem(
+            "MMFinancial.Transactions.Suspect",
+            l["Menu:Suspect"],
+            url: "/Transactions/Suspect"
+        )
     )
 );
+
     }
 }

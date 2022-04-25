@@ -1,4 +1,5 @@
 ﻿@page "{date?}"
+@using System.Globalization;
 @model MMFinancial.Web.Pages.Transactions.DetailModel
 @{
 }
@@ -21,23 +22,35 @@
                 <abp-table>
                     <thead>
                         <tr>
+                            <td colspan=3> Origin </td>
+                            <td colspan=1 style="border: none"> </td>
+                            <td colspan=3> Destiny </td>
+                        </tr>
+                        <tr>
                             <th scope="Column">Bank</th>
                             <th scope="Column">Account</th>
                             <th scope="Column">Agency</th>
+                            <th scope="Column"></th>
                              <th scope="Column">Bank</th>
                             <th scope="Column">Account</th>
                             <th scope="Column">Agency</th>
+                            <th scope="Column"></th>
+                            <th scope="Column">Value</th>
                         </tr>
                     </thead>
                     <tbody>
+                        
                         @foreach( var Transaction in Model.Transactions){
                             <tr>
                                 <td>@Transaction.BankFrom</td>
                                 <td>@Transaction.AccountFrom</td>
                                 <td>@Transaction.AgencyFrom</td>
+                                <td></td>
                                 <td>@Transaction.BankTo</td>
                                 <td>@Transaction.AccounTo</td>
                                 <td>@Transaction.AgencyTo</td>
+                                <td></td>
+                                <td>@Transaction.Value.ToString("C2", new CultureInfo("en-US"))</td>
                             </tr>
                             }
                     </tbody>
