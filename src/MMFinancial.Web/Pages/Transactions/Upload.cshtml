@@ -47,6 +47,7 @@
                             <th scope="Column">Trasaction Date</th>
                             <th scope="Column">Upload Date</th>
                             <th scope="Column"></th>
+                            <th scope="Column"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +57,15 @@
                                 <td>@upload.TransactionDate.ToString("dd/MM/yyyy")</td>
                                 <td>@upload.UploadDate.ToString("dd/MM/yyyy")</td>
                                 <td><a href="/Transactions/Detail/@upload.TransactionDate.ToString("MM-dd-yyyy")">Details</a></td>
+                                <td>
+                                    <form id="DownloadFile">
+                    <div class="form-group">
+                         <input hidden type="text" id="fileName" name="fileName" class="form-control " value="@upload.FileName">
+                        <input type="submit" value="Download" /> 
+                    </div>
+                      </form>
+
+                                </td>
                             </tr>
                         }
                     </tbody>

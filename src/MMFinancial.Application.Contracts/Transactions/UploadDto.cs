@@ -10,5 +10,6 @@ namespace MMFinancial.Transactions
         public DateTime UploadDate { get; set; }
 
         public Guid? CreatorId { get; set; }
+        public string FileName { get; set; }
     }
 }

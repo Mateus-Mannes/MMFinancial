@@ -67,7 +67,8 @@ namespace MMFinancial.Web.Pages.Transactions
                     AlreadyUploadedDate = true;
                     return Page();
                 }
-                var uploadId = await _uploadAppService.CreateAsync(new UploadDto { TransactionDate = firstDate, UploadDate = DateTime.Now, CreatorId = CurrentUser.Id });
+                string fileName = DateTime.Now.ToString("ddMMyyyyhhmmss") + UploadFileDto.Name;
+                var uploadId = await _uploadAppService.CreateAsync(new UploadDto { TransactionDate = firstDate, UploadDate = DateTime.Now, CreatorId = CurrentUser.Id, FileName = fileName });
                 while (line != null)
                 {
                     if (!line.Contains(",,"))
@@ -99,12 +100,13 @@ namespace MMFinancial.Web.Pages.Transactions
                 await _fileAppService.SaveBlobAsync(
                     new SaveBlobInputDto
                     {
-                        Name = UploadFileDto.Name,
+                        Name = fileName,
                         Content = content
                     }
                 );
             }
-            UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
+            await _unitOfWorkManager.Current.SaveChangesAsync();
+            UploadsList = await _uploadAppService.GetListAsync();
             return Page();
         }
     }
