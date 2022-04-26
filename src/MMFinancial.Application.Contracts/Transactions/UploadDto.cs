@@ -8,5 +8,7 @@ namespace MMFinancial.Transactions
     {
         public DateTime TransactionDate { get; set; }
         public DateTime UploadDate { get; set; }
+
+        public Guid? CreatorId { get; set; }
     }
 }

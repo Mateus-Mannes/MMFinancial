@@ -40,6 +40,7 @@ public class MMFinancialDbContext :
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<Upload> Uploads { get; set; }
 
     public MMFinancialDbContext(DbContextOptions<MMFinancialDbContext> options)
         : base(options)
@@ -68,6 +69,14 @@ public class MMFinancialDbContext :
         {
             b.ToTable(MMFinancialConsts.DbTablePrefix + "Trasanctions", MMFinancialConsts.DbSchema);
             b.ConfigureByConvention();
+            b.HasIndex(x => x._DateTime);
+            b.HasOne<Upload>().WithMany().HasForeignKey(x => x.UploadId).IsRequired();
+        });
+        builder.Entity<Upload>(b =>
+        {
+            b.ToTable(MMFinancialConsts.DbTablePrefix + "Uploads", MMFinancialConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.HasIndex(x => x.TransactionDate);
         });
         builder.ConfigureBlobStoring();
         }

@@ -14,5 +14,6 @@ namespace MMFinancial.Transactions
         public string AccounTo { get; set; }
         public double Value { get; set; }
         public DateTime _DateTime { get; set; }
+        public Guid UploadId { get; set; }
     }
 }

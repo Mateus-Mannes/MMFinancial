@@ -6,8 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 using System;
+using System.Linq;
 using MMFinancial.Transactions;
 using System.Collections.Generic;
+using Volo.Abp.Domain.Repositories;
+using Volo.Abp.Uow;
 
 namespace MMFinancial.Web.Pages.Transactions
 {
@@ -18,21 +21,25 @@ namespace MMFinancial.Web.Pages.Transactions
 
         private readonly IFileAppService _fileAppService;
         private readonly ITransactionAppService _transactionAppService;
+        private readonly IUploadAppService _uploadAppService;
+        private readonly IUnitOfWorkManager _unitOfWorkManager;
 
         public bool AlreadyUploadedDate { get; set; }
 
         public bool EmptyFile { get; set; }
         public IEnumerable<UploadDto> UploadsList { get; set; }
 
-        public UploadModel(IFileAppService fileAppService, ITransactionAppService transactionAppService)
+        public UploadModel(IFileAppService fileAppService, ITransactionAppService transactionAppService, IUploadAppService uploadAppService, IUnitOfWorkManager unitOfWorkManager)
         {
             _fileAppService = fileAppService;
             _transactionAppService = transactionAppService;
+            _uploadAppService = uploadAppService;
+            _unitOfWorkManager = unitOfWorkManager;
         }
 
         public async Task OnGetAsync()
         {
-            UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
+            UploadsList = await _uploadAppService.GetListAsync();
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -60,6 +67,7 @@ namespace MMFinancial.Web.Pages.Transactions
                     AlreadyUploadedDate = true;
                     return Page();
                 }
+                var uploadId = await _uploadAppService.CreateAsync(new UploadDto { TransactionDate = firstDate, UploadDate = DateTime.Now, CreatorId = CurrentUser.Id });
                 while (line != null)
                 {
                     if (!line.Contains(",,"))
@@ -77,7 +85,8 @@ namespace MMFinancial.Web.Pages.Transactions
                                 AgencyFrom = lineItems[1],
                                 AgencyTo = lineItems[4],
                                 Value = double.Parse(lineItems[6]),
-                                _DateTime = DateTime.Parse(lineItems[7])
+                                _DateTime = DateTime.Parse(lineItems[7]),
+                                UploadId = uploadId
                             };
                             await _transactionAppService.CreateTransactionAsync(createTransactionDto);
                         }

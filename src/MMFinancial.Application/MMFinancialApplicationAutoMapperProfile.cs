@@ -11,5 +11,7 @@ public class MMFinancialApplicationAutoMapperProfile : Profile
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
         CreateMap<Transaction, TransactionDto>();
+        CreateMap<UploadDto, Upload>();
+        CreateMap<Upload, UploadDto>();
     }
 }

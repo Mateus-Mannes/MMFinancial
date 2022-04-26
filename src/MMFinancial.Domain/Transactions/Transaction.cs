@@ -17,12 +17,13 @@ namespace MMFinancial.Transactions
         public string AccounTo { get; set; }
         public double Value { get; set; }
         public DateTime _DateTime { get; set; }
+        public Guid UploadId { get; set; }
 
         private Transaction()
         { }
 
 
-        public Transaction(Guid id, string bankFrom, string agencyFrom, string accountFrom, string bankTo, string agencyTo, string accounTo, double value, DateTime dateTime) : base(id)
+        public Transaction(Guid id, string bankFrom, string agencyFrom, string accountFrom, string bankTo, string agencyTo, string accounTo, double value, DateTime dateTime, Guid uploadId) : base(id)
         {
             BankFrom = bankFrom;
             AgencyFrom = agencyFrom;
@@ -32,6 +33,7 @@ namespace MMFinancial.Transactions
             AccounTo = accounTo;
             Value = value;
             _DateTime = dateTime;
+            UploadId = uploadId;
         }
     }
 
