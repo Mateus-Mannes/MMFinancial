@@ -45,70 +45,105 @@ namespace MMFinancial.Web.Pages.Transactions
 
         public async Task<IActionResult> OnPostAsync()
         {
-            UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
-            EmptyFile = false;
-            AlreadyUploadedDate = false;
             using (var stream = UploadFileDto.File.OpenReadStream())
             {
                 StreamReader sr = new StreamReader(stream);
-                FileReader fileReader = new CsvReader(sr);
+                FileReader fileReader = GetFileReader(UploadFileDto.Name, sr);
                 string[] lineItems = fileReader.ReadLine();
-                if (lineItems == null)
+                if (!await ValidFileAsync(lineItems, fileReader))
                 {
-                    EmptyFile = true;
+                    UploadsList = await _transactionAppService.GetUploadsHistoryAsync();
                     return Page();
                 }
-                DateTime firstDate;
-                while (lineItems.Contains("") || lineItems.Contains(null))
-                {
-                    lineItems = fileReader.ReadLine();
-                }
-                firstDate = DateTime.Parse(lineItems[7]);
-                if (await _transactionAppService.hasDate(firstDate))
-                {
-                    AlreadyUploadedDate = true;
-                    return Page();
-                }
+                DateTime firstDate = DateTime.Parse(lineItems[7]);
                 string fileName = DateTime.Now.ToString("ddMMyyyyhhmmss") + UploadFileDto.Name;
                 var uploadId = await _uploadAppService.CreateAsync(new CreateUploadDto { TransactionDate = firstDate, UploadDate = DateTime.Now, CreatorId = CurrentUser.Id, FileName = fileName });
-                while (lineItems != null)
-                {
-                    if (!lineItems.Contains("") && !lineItems.Contains(null))
-                    {
-                        DateTime date = DateTime.Parse(lineItems[7]);
-                        if (date.Date == firstDate.Date)
-                        {
-                            CreateTransactionDto createTransactionDto = new CreateTransactionDto
-                            {
-                                BankFrom = lineItems[0],
-                                BankTo = lineItems[3],
-                                AccountFrom = lineItems[2],
-                                AccounTo = lineItems[5],
-                                AgencyFrom = lineItems[1],
-                                AgencyTo = lineItems[4],
-                                Value = double.Parse(lineItems[6]),
-                                _DateTime = DateTime.Parse(lineItems[7]),
-                                UploadId = uploadId
-                            };
-                            await _transactionAppService.CreateTransactionAsync(createTransactionDto);
-                        }
-                    }
-                    lineItems = fileReader.ReadLine();
-                }
-
-                byte[] content = stream.GetAllBytes();
-
-                await _fileAppService.SaveBlobAsync(
-                    new SaveBlobInputDto
-                    {
-                        Name = fileName,
-                        Content = content
-                    }
-                );
+                await ReadAndInsertTransactions(fileReader, lineItems, firstDate, uploadId);
+                await SaveBlobAsync(stream, fileName);
             }
             await _unitOfWorkManager.Current.SaveChangesAsync();
             UploadsList = await _uploadAppService.GetListAsync();
             return Page();
+        }
+
+        private FileReader GetFileReader(string fileName, StreamReader sr)
+        {
+            if(fileName.Split('.').Last().ToLower() == "csv")
+            {
+                return new CsvReader(sr);
+            }
+            else
+            {
+                return new XmlReader(sr);
+            }
+        }
+
+        private async Task<bool> ValidFileAsync(string[] lineItems, FileReader fileReader)
+        {
+            if (lineItems == null)
+            {
+                EmptyFile = true;
+                return false;
+            }
+            while (lineItems.Contains("") || lineItems.Contains(null))
+            {
+                lineItems = fileReader.ReadLine();
+            }
+            DateTime firstDate;
+            firstDate = DateTime.Parse(lineItems[7]);
+            if (await _transactionAppService.hasDate(firstDate))
+            {
+                AlreadyUploadedDate = true;
+                return false;
+            }
+            return true;
+
+        }
+
+        private async Task ReadAndInsertTransactions(FileReader fileReader, string[] lineItems, DateTime firstDate, Guid uploadId)
+        {
+            while (lineItems != null)
+            {
+                if (!lineItems.Contains("") && !lineItems.Contains(null))
+                {
+                    DateTime date = DateTime.Parse(lineItems[7]);
+                    if (date.Date == firstDate.Date)
+                    {
+                        CreateTransactionDto createTransactionDto = LineItemsToTransactionCreateDto(lineItems, uploadId);
+                        await _transactionAppService.CreateTransactionAsync(createTransactionDto);
+                    }
+                }
+                lineItems = fileReader.ReadLine();
+            }
+        }
+
+        private CreateTransactionDto LineItemsToTransactionCreateDto(string[] lineItems, Guid uploadId)
+        {
+            return new CreateTransactionDto
+            {
+                BankFrom = lineItems[0],
+                BankTo = lineItems[3],
+                AccountFrom = lineItems[2],
+                AccounTo = lineItems[5],
+                AgencyFrom = lineItems[1],
+                AgencyTo = lineItems[4],
+                Value = double.Parse(lineItems[6]),
+                _DateTime = DateTime.Parse(lineItems[7]),
+                UploadId = uploadId
+            };
+        }
+
+        private async Task SaveBlobAsync(Stream stream, string fileName)
+        {
+            byte[] content = stream.GetAllBytes();
+
+            await _fileAppService.SaveBlobAsync(
+                new SaveBlobInputDto
+                {
+                    Name = fileName,
+                    Content = content
+                }
+            );
         }
     }
 

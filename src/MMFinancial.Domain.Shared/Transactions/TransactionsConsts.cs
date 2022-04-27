@@ -9,5 +9,6 @@ namespace MMFinancial.Transactions
         public const int MaxNotSuspectTransaction = 100000;
         public const int MaxNotSuspectAgency =  1000000000;
         public const int MaxNotSuspectAccount = 1000000;
+        public const int TransactionAttributesCount = 8;
     }
 }
