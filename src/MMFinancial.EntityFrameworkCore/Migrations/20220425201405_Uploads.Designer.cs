@@ -4,6 +4,7 @@ using MMFinancial.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace MMFinancial.Migrations
 {
     [DbContext(typeof(MMFinancialDbContext))]
-    partial class MMFinancialDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220425201405_Uploads")]
+    partial class Uploads
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,9 +75,6 @@ namespace MMFinancial.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("LastModifierId");
 
-                    b.Property<Guid>("UploadId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<double>("Value")
                         .HasColumnType("float");
 
@@ -83,8 +82,6 @@ namespace MMFinancial.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UploadId");
 
                     b.HasIndex("_DateTime");
 
@@ -96,11 +93,8 @@ namespace MMFinancial.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("CreatorId")
+                    b.Property<Guid>("CreatorId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("FileName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
@@ -2114,15 +2108,6 @@ namespace MMFinancial.Migrations
                     b.HasKey("TenantId", "Name");
 
                     b.ToTable("AbpTenantConnectionStrings", (string)null);
-                });
-
-            modelBuilder.Entity("MMFinancial.Transactions.Transaction", b =>
-                {
-                    b.HasOne("MMFinancial.Transactions.Upload", null)
-                        .WithMany()
-                        .HasForeignKey("UploadId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>

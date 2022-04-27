@@ -33,7 +33,7 @@ namespace MMFinancial.Transactions
                     Agency = x.First().AgencyFrom,
                     ValueMoved = x.Sum(y => y.Value),
                     Type = "Entry"
-                }).Where(x => x.ValueMoved > 1000000000).ToList();
+                }).Where(x => x.ValueMoved > TransactionsConsts.MaxNotSuspectAgency).ToList();
 
             List<AgencyMovementsDto> agenciesTo = new List<AgencyMovementsDto>();
             agenciesTo = queryable
@@ -45,7 +45,7 @@ namespace MMFinancial.Transactions
                     Agency = x.First().AgencyTo,
                     ValueMoved = x.Sum(y => y.Value),
                     Type = "Out"
-                }).Where(x => x.ValueMoved > 1000000000).ToList();
+                }).Where(x => x.ValueMoved > TransactionsConsts.MaxNotSuspectAgency).ToList();
 
             return agenciesFrom.Concat(agenciesTo).ToList();
         }
@@ -63,7 +63,7 @@ namespace MMFinancial.Transactions
                     Account = x.First().AccountFrom, 
                     ValueMoved = x.Sum(y => y.Value),
                     Type = "Entry"
-                }).Where(x => x.ValueMoved > 1000000).ToList();
+                }).Where(x => x.ValueMoved > TransactionsConsts.MaxNotSuspectAccount).ToList();
 
             List<AccountMovimentationDto> accountsTo = new List<AccountMovimentationDto>();
             accountsTo = queryable
@@ -76,7 +76,7 @@ namespace MMFinancial.Transactions
                     Account = x.First().AccounTo,
                     ValueMoved = x.Sum(y => y.Value),
                     Type = "Out"
-                }).Where(x => x.ValueMoved > 1000000).ToList();
+                }).Where(x => x.ValueMoved > TransactionsConsts.MaxNotSuspectAccount).ToList();
             
             return accountsFrom.Concat(accountsTo).ToList();
         }
@@ -86,7 +86,7 @@ namespace MMFinancial.Transactions
         {
             IQueryable<Transaction> queryable = await _transactionRepository.GetQueryableAsync();
             List<Transaction> transactions = new List<Transaction>();
-            transactions = queryable.Where(x => x.Value > 100000 && x._DateTime.Month == month && x._DateTime.Year == year).ToList();
+            transactions = queryable.Where(x => x.Value > TransactionsConsts.MaxNotSuspectTransaction && x._DateTime.Month == month && x._DateTime.Year == year).ToList();
             return ObjectMapper.Map<List<Transaction>, List<TransactionDto>>(transactions);
         }
 
@@ -119,8 +119,7 @@ namespace MMFinancial.Transactions
 
         public async Task<TransactionDto> CreateTransactionAsync(CreateTransactionDto input)
         {
-            Transaction newTransaction = new Transaction(GuidGenerator.Create(), input.BankFrom, input.AgencyFrom, input.AccountFrom, input.BankTo, input.AgencyTo, input.AccounTo, input.Value, input._DateTime
-                );
+            Transaction newTransaction = new Transaction(GuidGenerator.Create(), input.BankFrom, input.AgencyFrom, input.AccountFrom, input.BankTo, input.AgencyTo, input.AccounTo, input.Value, input._DateTime, input.UploadId);
              await _transactionRepository.InsertAsync(newTransaction);
             return ObjectMapper.Map<Transaction, TransactionDto>(newTransaction);
         }

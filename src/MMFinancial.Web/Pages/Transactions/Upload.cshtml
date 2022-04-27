@@ -47,15 +47,39 @@
                             <th scope="Column">Trasaction Date</th>
                             <th scope="Column">Upload Date</th>
                             <th scope="Column"></th>
+                            <th scope="Column"></th>
+                            <th scope="Column"></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var upload in Model.UploadsList.OrderByDescending(i => i.TransactionDate))
                         {
-                            <tr>
+                            <tr id="@upload.Id" >
                                 <td>@upload.TransactionDate.ToString("dd/MM/yyyy")</td>
                                 <td>@upload.UploadDate.ToString("dd/MM/yyyy")</td>
-                                <td><a href="/Transactions/Detail/@upload.TransactionDate.ToString("MM-dd-yyyy")">Details</a></td>
+                                <td><a style="color:blue" href="/Transactions/Detail/@upload.TransactionDate.ToString("MM-dd-yyyy")">Details</a></td>
+                                <td>
+                                    <form id="DownloadFile" onsubmit="getfilename('@upload.FileName')">
+                    <div class="form-group">
+                         <input hidden type="text" id="fileName" name="fileName" class="form-control " value="@upload.FileName">
+                        <input  style="text-decoration: underline; color:blue; background:none; border:none" type="submit" value="Download" /> 
+                        
+                    </div>
+                      </form>
+
+                                </td>
+
+                                <td>
+                                    <form id="DeleteFile" onsubmit="getfilenameandid('@upload.FileName', '@upload.Id')">
+                    <div class="form-group">
+                         <input hidden type="text" id="uploadId" name="dateDelete" class="form-control " value="@upload.Id">
+                         <input hidden type="text" id="fileName" name="dateDelete" class="form-control " value="@upload.FileName">
+                        <input  style="text-decoration: underline; color:blue; background:none; border:none" type="submit" value="Delete" /> 
+                    </div>                        
+                      </form>
+
+                                </td>
+
                             </tr>
                         }
                     </tbody>
