@@ -11,6 +11,7 @@ using MMFinancial.Transactions;
 using System.Collections.Generic;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Uow;
+using MMFinancial.FileReaders;
 
 namespace MMFinancial.Web.Pages.Transactions
 {
@@ -50,30 +51,30 @@ namespace MMFinancial.Web.Pages.Transactions
             using (var stream = UploadFileDto.File.OpenReadStream())
             {
                 StreamReader sr = new StreamReader(stream);
-                string line = sr.ReadLine();
-                if (line == null || line == "")
+                FileReader fileReader = new CsvReader(sr);
+                string[] lineItems = fileReader.ReadLine();
+                if (lineItems == null)
                 {
                     EmptyFile = true;
                     return Page();
                 }
                 DateTime firstDate;
-                while (line.Contains(",,"))
+                while (lineItems.Contains("") || lineItems.Contains(null))
                 {
-                    line = sr.ReadLine();
+                    lineItems = fileReader.ReadLine();
                 }
-                firstDate = DateTime.Parse(line.Split(',')[7]);
+                firstDate = DateTime.Parse(lineItems[7]);
                 if (await _transactionAppService.hasDate(firstDate))
                 {
                     AlreadyUploadedDate = true;
                     return Page();
                 }
                 string fileName = DateTime.Now.ToString("ddMMyyyyhhmmss") + UploadFileDto.Name;
-                var uploadId = await _uploadAppService.CreateAsync(new UploadDto { TransactionDate = firstDate, UploadDate = DateTime.Now, CreatorId = CurrentUser.Id, FileName = fileName });
-                while (line != null)
+                var uploadId = await _uploadAppService.CreateAsync(new CreateUploadDto { TransactionDate = firstDate, UploadDate = DateTime.Now, CreatorId = CurrentUser.Id, FileName = fileName });
+                while (lineItems != null)
                 {
-                    if (!line.Contains(",,"))
+                    if (!lineItems.Contains("") && !lineItems.Contains(null))
                     {
-                        string[] lineItems = line.Split(",");
                         DateTime date = DateTime.Parse(lineItems[7]);
                         if (date.Date == firstDate.Date)
                         {
@@ -92,7 +93,7 @@ namespace MMFinancial.Web.Pages.Transactions
                             await _transactionAppService.CreateTransactionAsync(createTransactionDto);
                         }
                     }
-                    line = sr.ReadLine();
+                    lineItems = fileReader.ReadLine();
                 }
 
                 byte[] content = stream.GetAllBytes();

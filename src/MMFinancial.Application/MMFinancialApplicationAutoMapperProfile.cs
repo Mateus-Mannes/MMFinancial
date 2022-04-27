@@ -13,5 +13,6 @@ public class MMFinancialApplicationAutoMapperProfile : Profile
         CreateMap<Transaction, TransactionDto>();
         CreateMap<UploadDto, Upload>();
         CreateMap<Upload, UploadDto>();
+        CreateMap<CreateUploadDto, Upload>();
     }
 }

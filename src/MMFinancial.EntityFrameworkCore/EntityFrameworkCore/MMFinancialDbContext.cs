@@ -65,18 +65,20 @@ public class MMFinancialDbContext :
 
         /* Configure your own tables/entities inside here */
 
+        builder.Entity<Upload>(b =>
+        {
+            b.ToTable(MMFinancialConsts.DbTablePrefix + "Uploads", MMFinancialConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.HasIndex(x => x.TransactionDate);
+
+        });
+
         builder.Entity<Transaction>(b =>
         {
             b.ToTable(MMFinancialConsts.DbTablePrefix + "Trasanctions", MMFinancialConsts.DbSchema);
             b.ConfigureByConvention();
             b.HasIndex(x => x._DateTime);
             b.HasOne<Upload>().WithMany().HasForeignKey(x => x.UploadId).IsRequired();
-        });
-        builder.Entity<Upload>(b =>
-        {
-            b.ToTable(MMFinancialConsts.DbTablePrefix + "Uploads", MMFinancialConsts.DbSchema);
-            b.ConfigureByConvention();
-            b.HasIndex(x => x.TransactionDate);
         });
         builder.ConfigureBlobStoring();
         }

@@ -20,6 +20,10 @@ namespace MMFinancial
             var blob = await _fileContainer.GetAllBytesAsync(input.Name); 
             return new BlobDto{ Name = input.Name,Content = blob};
         } 
+        public async Task DeleteAsync(string name)
+        {
+            await _fileContainer.DeleteAsync(name);
+        }
 
         public async Task<StreamDto> GetFileStreamAsync(GetStreamRequestDto input)
         {

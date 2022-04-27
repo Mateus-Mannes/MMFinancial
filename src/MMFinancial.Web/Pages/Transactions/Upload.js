@@ -21,3 +21,18 @@
         $("#UploadFileDto_Name").val(fileName);
     });
 });
+
+$(function () {
+    var deleteForm = $("form#DeleteFile");
+
+    deleteForm.submit(function (event) {
+        event.preventDefault();
+
+        var fileName = $("#fileName").val().trim();
+        var uploadId = $("#uploadId").val().trim();
+        mMFinancial.transactions.upload.delete(uploadId, fileName);
+        document.getElementById(uploadId).hidden = true;
+      
+    });
+
+});

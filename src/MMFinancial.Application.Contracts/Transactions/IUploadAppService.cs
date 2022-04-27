@@ -8,7 +8,8 @@ namespace MMFinancial.Transactions
 {
     public interface IUploadAppService : IApplicationService
     {
-        Task<Guid> CreateAsync(UploadDto upload);
+        Task<Guid> CreateAsync(CreateUploadDto upload);
         Task<List<UploadDto>> GetListAsync();
+        Task DeleteAsync(Guid id, string name);
     }
 }

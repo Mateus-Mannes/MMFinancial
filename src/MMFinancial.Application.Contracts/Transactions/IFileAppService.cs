@@ -8,5 +8,7 @@ namespace MMFinancial
         Task SaveBlobAsync(SaveBlobInputDto input);
         Task<BlobDto> GetBlobAsync(GetBlobRequestDto input);
         Task<StreamDto> GetFileStreamAsync(GetStreamRequestDto input);
+
+        Task DeleteAsync(string name);
     } 
 }
