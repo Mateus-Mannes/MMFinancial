@@ -61,7 +61,12 @@ public class AppIdentityUserAppService : IdentityUserAppService
     {
 
         var user = await base.CreateAsync(input);
-        await EmailSenderService.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
+        string emailStatus = await EmailSenderService.SendEmailAsync("Setting Password", "Your password is: " + input.Password, user.Email);
+        if(emailStatus == "Erro")
+        {
+            await base.DeleteAsync(user.Id);
+            return null;
+        }
         return user;
     }
 

@@ -1,9 +1,9 @@
-﻿@page
+﻿@page "{erro?}"
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Volo.Abp.Account.Localization
 @using Volo.Abp.Account.Settings
 @using Volo.Abp.Settings
-@model Volo.Abp.Account.Web.Pages.Account.LoginModel
+@model MMFinancial.Web.Pages.Account.RegisteredModel
 @inject IHtmlLocalizer<AccountResource> L
 @inject Volo.Abp.Settings.ISettingProvider SettingProvider
 <script>
@@ -11,7 +11,14 @@ document.getElementsByClassName('card shadow-sm rounded mb-3')[0].style.display 
 </script>
 <div class="card mt-3 shadow-sm rounded">
     <div class="card-body p-5">
-        <h7>Now you are registerd ! Your password have  been send to your email by mmfinancialapp@hotmaill.com, please check the junk box. Then make the login</h7>
+        @if(!Model.userNotRegistered){
+            <h7>Now you are registerd ! Your password have  been send to your email by mmfinancialapp@hotmaill.com, please check the junk box. Then make the login</h7>
+        }
+        else
+        {
+            <h7>Sorry, we couldn't register you now. Please try again later.</h7>
+            <br/>
+        }
         <a href = "/Account/Login">
         <abp-button button-type="Primary" class="btn-lg mt-4">Back to Login</abp-button>
         </a>
