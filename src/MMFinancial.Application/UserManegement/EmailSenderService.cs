@@ -11,7 +11,7 @@ namespace MMFinancial.Transactions
 {
     public static class EmailSenderService
     {
-        public static async Task SendEmailAsync(string title,string text, string userEmail)
+        public static async Task<string> SendEmailAsync(string title,string text, string userEmail)
         {
             try
             {
@@ -23,13 +23,17 @@ namespace MMFinancial.Transactions
                 message.IsBodyHtml = true; //to make message body as html  
                 message.Body = text;
                 smtp.Port = 587;
-                smtp.Host = "smtp.live.com"; //for gmail host  
+                smtp.Host = "smtp-mail.outlook.com"; //for gmail host  
                 smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new NetworkCredential("mmfinancialapp@hotmail.com", "financial123");
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(message);
-            }catch(Exception){ }
+                return "Sended"; //ok
+            }catch(Exception)
+            {
+                return "Erro"; //erro
+            }
             }
         }
     }

@@ -42,7 +42,7 @@ namespace MMFinancial.Web.Pages.Account
             {
                 Random random = new Random();
                 Input.Password = (random.Next() % 1000000).ToString() + "FFa*";
-                await _accountAppService1.RegisterAsync(
+                var user = await _accountAppService1.RegisterAsync(
                 new RegisterDto
                 {
                     AppName = "MVC",
@@ -51,7 +51,11 @@ namespace MMFinancial.Web.Pages.Account
                     UserName = Input.UserName
                 }
             );
-                return Redirect("/Account/Registered");
+                if(user == null)
+                {
+                    return Redirect("/Account/Registered/erro");
+                }
+                return Redirect("/Account/Registered/ok");
             }
         }
 
