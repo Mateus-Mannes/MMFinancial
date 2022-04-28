@@ -35,6 +35,20 @@ namespace MMFinancial.Transactions
             _DateTime = dateTime;
             UploadId = uploadId;
         }
+
+        public Transaction(Guid creatorId,Guid id, string bankFrom, string agencyFrom, string accountFrom, string bankTo, string agencyTo, string accounTo, double value, DateTime dateTime, Guid uploadId) : base(id)
+        {
+            CreatorId = creatorId;
+            BankFrom = bankFrom;
+            AgencyFrom = agencyFrom;
+            AccountFrom = accountFrom;
+            BankTo = bankTo;
+            AgencyTo = agencyTo;
+            AccounTo = accounTo;
+            Value = value;
+            _DateTime = dateTime;
+            UploadId = uploadId;
+        }
     }
 
 }
