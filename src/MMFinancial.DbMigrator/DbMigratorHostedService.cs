@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +28,9 @@ public class DbMigratorHostedService : IHostedService
            options.Services.ReplaceConfiguration(_configuration);
            options.UseAutofac();
            options.Services.AddLogging(c => c.AddSerilog());
+
+            // Add this line of code to make it possible read from appsettings.Staging.json
+            options.Services.ReplaceConfiguration(BuildConfiguration());
         }))
         {
             await application.InitializeAsync();
@@ -40,6 +44,22 @@ public class DbMigratorHostedService : IHostedService
 
             _hostApplicationLifetime.StopApplication();
         }
+    }
+
+    private static IConfiguration BuildConfiguration()
+    {
+        var configurationBuilder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+
+        // Extra code block to make it possible to read from appsettings.Staging.json
+        var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+        if (environmentName == "Staging")
+        {
+            configurationBuilder.AddJsonFile($"appsettings.{environmentName}.json", true);
+        }
+
+        return configurationBuilder
+            .AddEnvironmentVariables()
+            .Build();
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
