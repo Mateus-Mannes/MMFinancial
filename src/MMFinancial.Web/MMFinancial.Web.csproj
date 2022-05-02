@@ -21,6 +21,12 @@
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
   </ItemGroup>
+  
+  <ItemGroup>
+  <None Update="tempkey.jwk">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
 
   <ItemGroup>
     <None Update="Pages\**\*.js">
