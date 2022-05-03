@@ -40,7 +40,8 @@ https://docs.abp.io/en/abp/4.4/Getting-Started-Running-Solution?UI=MVC&DB=EF&Tie
    
 # Deployment
 
-//TODO DEPLOY ON AZURE
+Deployed at https://mmfinancialapi.azurewebsites.net/
+tutorial reference: https://community.abp.io/posts/deploying-abp-applications-to-azure-ztvp6p57
 
 # Development process:
 
