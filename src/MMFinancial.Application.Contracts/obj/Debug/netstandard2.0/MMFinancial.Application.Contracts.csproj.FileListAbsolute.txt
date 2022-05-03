@@ -1,0 +1,13 @@
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\bin\Debug\netstandard2.0\MMFinancial.Application.Contracts.deps.json
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\bin\Debug\netstandard2.0\MMFinancial.Application.Contracts.dll
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\bin\Debug\netstandard2.0\MMFinancial.Application.Contracts.pdb
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\bin\Debug\netstandard2.0\MMFinancial.Domain.Shared.dll
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\bin\Debug\netstandard2.0\MMFinancial.Domain.Shared.pdb
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.csproj.AssemblyReference.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.AssemblyInfo.cs
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.csproj.CopyComplete
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.dll
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Application.Contracts\obj\Debug\netstandard2.0\MMFinancial.Application.Contracts.pdb

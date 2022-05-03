@@ -1,0 +1,68 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MMFinancial.Web
+build_property.RootNamespace = MMFinancial.Web
+build_property.ProjectDir = C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Components/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Account/Registered.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3RlcmVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Identity/Users/CreateModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcVXNlcnNcQ3JlYXRlTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Identity/Users/EditModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcVXNlcnNcRWRpdE1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Transactions/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNhY3Rpb25zXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Transactions/Suspect.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNhY3Rpb25zXFN1c3BlY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/Transactions/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNhY3Rpb25zXFVwbG9hZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Themes/Basic/Components/Toolbar/LanguageSwitch/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = VGhlbWVzXEJhc2ljXENvbXBvbmVudHNcVG9vbGJhclxMYW5ndWFnZVN3aXRjaFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Downloads/Nova pasta (7)/MMFinancial/src/MMFinancial.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,564 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.Domain.Tests\\MMFinancial.Domain.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain.Shared\\MMFinancial.Domain.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain.Shared\\MMFinancial.Domain.Shared.csproj",
+        "projectName": "MMFinancial.Domain.Shared",
+        "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain.Shared\\MMFinancial.Domain.Shared.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\NuGet.Config",
+          "C:\\Users\\mateu\\Downloads\\NuGet.Config",
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/blazorise/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.Extensions.FileProviders.Embedded": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Volo.Abp.AuditLogging.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.BackgroundJobs.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.BlobStoring.Database.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.FeatureManagement.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.Identity.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.IdentityServer.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.PermissionManagement.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.SettingManagement.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.TenantManagement.Domain.Shared": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj",
+        "projectName": "MMFinancial.Domain",
+        "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\NuGet.Config",
+          "C:\\Users\\mateu\\Downloads\\NuGet.Config",
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/blazorise/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain.Shared\\MMFinancial.Domain.Shared.csproj": {
+                "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain.Shared\\MMFinancial.Domain.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Volo.Abp.AuditLogging.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.BackgroundJobs.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.BlobStoring.Database.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.Emailing": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.FeatureManagement.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.Identity.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.IdentityServer.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.PermissionManagement.Domain.Identity": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.PermissionManagement.Domain.IdentityServer": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.SettingManagement.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.TenantManagement.Domain": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.EntityFrameworkCore\\MMFinancial.EntityFrameworkCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.EntityFrameworkCore\\MMFinancial.EntityFrameworkCore.csproj",
+        "projectName": "MMFinancial.EntityFrameworkCore",
+        "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.EntityFrameworkCore\\MMFinancial.EntityFrameworkCore.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.EntityFrameworkCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\NuGet.Config",
+          "C:\\Users\\mateu\\Downloads\\NuGet.Config",
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/blazorise/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj": {
+                "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Volo.Abp.AuditLogging.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.BackgroundJobs.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.BlobStoring.Database.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.FeatureManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.IdentityServer.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.PermissionManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.SettingManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.TenantManagement.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.Domain.Tests\\MMFinancial.Domain.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.Domain.Tests\\MMFinancial.Domain.Tests.csproj",
+        "projectName": "MMFinancial.Domain.Tests",
+        "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.Domain.Tests\\MMFinancial.Domain.Tests.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.Domain.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\NuGet.Config",
+          "C:\\Users\\mateu\\Downloads\\NuGet.Config",
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/blazorise/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.EntityFrameworkCore.Tests\\MMFinancial.EntityFrameworkCore.Tests.csproj": {
+                "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.EntityFrameworkCore.Tests\\MMFinancial.EntityFrameworkCore.Tests.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.EntityFrameworkCore.Tests\\MMFinancial.EntityFrameworkCore.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.EntityFrameworkCore.Tests\\MMFinancial.EntityFrameworkCore.Tests.csproj",
+        "projectName": "MMFinancial.EntityFrameworkCore.Tests",
+        "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.EntityFrameworkCore.Tests\\MMFinancial.EntityFrameworkCore.Tests.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.EntityFrameworkCore.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\NuGet.Config",
+          "C:\\Users\\mateu\\Downloads\\NuGet.Config",
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/blazorise/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.EntityFrameworkCore\\MMFinancial.EntityFrameworkCore.csproj": {
+                "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.EntityFrameworkCore\\MMFinancial.EntityFrameworkCore.csproj"
+              },
+              "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.TestBase\\MMFinancial.TestBase.csproj": {
+                "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.TestBase\\MMFinancial.TestBase.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "Volo.Abp.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.TestBase\\MMFinancial.TestBase.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.TestBase\\MMFinancial.TestBase.csproj",
+        "projectName": "MMFinancial.TestBase",
+        "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.TestBase\\MMFinancial.TestBase.csproj",
+        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\test\\MMFinancial.TestBase\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\NuGet.Config",
+          "C:\\Users\\mateu\\Downloads\\NuGet.Config",
+          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/blazorise/api/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj": {
+                "projectPath": "C:\\Users\\mateu\\Downloads\\Nova pasta (7)\\MMFinancial\\src\\MMFinancial.Domain\\MMFinancial.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.11.0, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "Shouldly": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Volo.Abp.Authorization": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.Autofac": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Volo.Abp.TestBase": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.extensibility.execution": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

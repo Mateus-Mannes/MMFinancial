@@ -1,0 +1,615 @@
+2022-05-03 15:59:50.495 -03:00 [INF] Starting web host.
+2022-05-03 16:00:11.426 -03:00 [INF] Loaded ABP modules:
+2022-05-03 16:00:11.428 -03:00 [INF] - MMFinancial.Web.MMFinancialWebModule
+2022-05-03 16:00:11.428 -03:00 [INF]   - MMFinancial.MMFinancialHttpApiModule
+2022-05-03 16:00:11.428 -03:00 [INF]     - MMFinancial.MMFinancialApplicationContractsModule
+2022-05-03 16:00:11.428 -03:00 [INF]       - MMFinancial.MMFinancialDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-05-03 16:00:11.428 -03:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-05-03 16:00:11.428 -03:00 [INF]             - Volo.Abp.Localization.AbpLocalizationModule
+2022-05-03 16:00:11.428 -03:00 [INF]               - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-05-03 16:00:11.428 -03:00 [INF]               - Volo.Abp.Settings.AbpSettingsModule
+2022-05-03 16:00:11.428 -03:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-05-03 16:00:11.428 -03:00 [INF]                 - Volo.Abp.Security.AbpSecurityModule
+2022-05-03 16:00:11.428 -03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-05-03 16:00:11.428 -03:00 [INF]                   - Volo.Abp.Data.AbpDataModule
+2022-05-03 16:00:11.428 -03:00 [INF]                     - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-05-03 16:00:11.428 -03:00 [INF]                     - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-05-03 16:00:11.428 -03:00 [INF]                     - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-05-03 16:00:11.428 -03:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-05-03 16:00:11.428 -03:00 [INF]         - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2022-05-03 16:00:11.429 -03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-05-03 16:00:11.429 -03:00 [INF]             - Volo.Abp.EventBus.AbpEventBusModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.Json.AbpJsonModule
+2022-05-03 16:00:11.429 -03:00 [INF]                 - Volo.Abp.Timing.AbpTimingModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.Guids.AbpGuidsModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-05-03 16:00:11.429 -03:00 [INF]                 - Volo.Abp.Threading.AbpThreadingModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2022-05-03 16:00:11.429 -03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2022-05-03 16:00:11.429 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-05-03 16:00:11.429 -03:00 [INF]             - Volo.Abp.Auditing.AbpAuditingModule
+2022-05-03 16:00:11.429 -03:00 [INF]             - Volo.Abp.Http.AbpHttpModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-05-03 16:00:11.429 -03:00 [INF]               - Volo.Abp.Minify.AbpMinifyModule
+2022-05-03 16:00:11.429 -03:00 [INF]             - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-05-03 16:00:11.429 -03:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-05-03 16:00:11.430 -03:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-05-03 16:00:11.430 -03:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-05-03 16:00:11.430 -03:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-05-03 16:00:11.430 -03:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2022-05-03 16:00:11.430 -03:00 [INF]   - MMFinancial.MMFinancialApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - MMFinancial.MMFinancialDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2022-05-03 16:00:11.430 -03:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-05-03 16:00:11.430 -03:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2022-05-03 16:00:11.430 -03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2022-05-03 16:00:11.430 -03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2022-05-03 16:00:11.430 -03:00 [INF]   - MMFinancial.EntityFrameworkCore.MMFinancialEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2022-05-03 16:00:11.430 -03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2022-05-03 16:00:11.431 -03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2022-05-03 16:00:11.431 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2022-05-03 16:00:11.431 -03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2022-05-03 16:00:11.431 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2022-05-03 16:00:11.431 -03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2022-05-03 16:00:11.431 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.SettingManagement.Web.AbpSettingManagementWebModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebModule
+2022-05-03 16:00:11.431 -03:00 [INF]       - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2022-05-03 16:00:11.431 -03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2022-05-03 16:00:11.431 -03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-05-03 16:00:11.431 -03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-05-03 16:00:11.828 -03:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2022-05-03 16:00:14.387 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2022-05-03 16:00:14.662 -03:00 [INF] User profile is available. Using 'C:\Users\mateu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-03 16:00:15.002 -03:00 [INF] Initialized all ABP modules.
+2022-05-03 16:00:15.338 -03:00 [INF] Now listening on: http://127.0.0.1:27639
+2022-05-03 16:00:15.338 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-03 16:00:15.339 -03:00 [INF] Hosting environment: Staging
+2022-05-03 16:00:15.339 -03:00 [INF] Content root path: C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Web\
+2022-05-03 16:00:15.511 -03:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44315/ - 0
+2022-05-03 16:00:15.511 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/ - -
+2022-05-03 16:00:15.571 -03:00 [INF] Request finished HTTP/1.1 DEBUG http://localhost:44315/ - 0 - 200 0 - 58.5038ms
+2022-05-03 16:00:22.202 -03:00 [INF] Executing endpoint '/Index'
+2022-05-03 16:00:22.236 -03:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2022-05-03 16:00:22.238 -03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2022-05-03 16:00:22.271 -03:00 [INF] Executing handler method MMFinancial.Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-05-03 16:00:22.271 -03:00 [INF] Executed handler method OnGet, returned result .
+2022-05-03 16:00:22.279 -03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-05-03 16:00:22.279 -03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-05-03 16:00:22.677 -03:00 [INF] Bundling __bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css (12 files)
+2022-05-03 16:00:22.740 -03:00 [INF] Executed page /Index in 494.1666ms
+2022-05-03 16:00:22.751 -03:00 [INF] Executed endpoint '/Index'
+2022-05-03 16:00:24.225 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+Volo.Abp.AbpException: Could not find file '/libs/abp/core/abp.css'
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetFileInfo(IBundlerContext context, String file)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetAndMinifyFileContent(IBundlerContext context, String fileName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetFileContentConsideringMinification(IBundlerContext context, String fileName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.Bundle(IBundlerContext context)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.<>c__DisplayClass16_0.<GetBundleFilesAsync>b__0()
+   at System.Collections.Generic.AbpDictionaryExtensions.<>c__DisplayClass7_0`2.<GetOrAdd>b__0(TKey k)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Collections.Generic.AbpDictionaryExtensions.GetOrAdd[TKey,TValue](ConcurrentDictionary`2 dictionary, TKey key, Func`1 factory)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleCache.GetOrAdd(String bundleName, Func`1 factory)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.GetBundleFilesAsync(BundleConfigurationCollection bundles, String bundleName, IBundler bundler)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.GetStyleBundleFilesAsync(String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperStyleService.GetBundleFilesAsync(String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperResourceService.ProcessAsync(ViewContext viewContext, TagHelper tagHelper, TagHelperContext context, TagHelperOutput output, List`1 bundleItems, String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpBundleTagHelperService`2.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Themes_Basic_Layouts_Application.<>c__DisplayClass13_0.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Themes_Basic_Layouts_Application.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Volo.Abp.AspNetCore.Serilog.AbpSerilogMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events, IBackChannelLogoutService backChannelLogoutService)
+   at IdentityServer4.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.MultiTenancy.MultiTenancyMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpJwtTokenMiddlewareExtension.<>c__DisplayClass0_0.<<UseJwtTokenMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-05-03 16:00:24.254 -03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Controllers.ErrorController.Index (Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared)'
+2022-05-03 16:00:24.305 -03:00 [INF] Route matched with {action = "Index", controller = "Error", area = "", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32) on controller Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Controllers.ErrorController (Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared).
+2022-05-03 16:00:24.416 -03:00 [INF] Executing ViewResult, running view ~/Views/Error/Default.cshtml.
+2022-05-03 16:00:24.439 -03:00 [INF] Bundling __bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css (12 files)
+2022-05-03 16:00:24.446 -03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Controllers.ErrorController.Index (Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared) in 140.7678ms
+2022-05-03 16:00:24.448 -03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.Controllers.ErrorController.Index (Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared)'
+2022-05-03 16:00:25.031 -03:00 [ERR] An exception was thrown attempting to execute the error handler.
+Volo.Abp.AbpException: Could not find file '/libs/abp/core/abp.css'
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetFileInfo(IBundlerContext context, String file)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetAndMinifyFileContent(IBundlerContext context, String fileName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetFileContentConsideringMinification(IBundlerContext context, String fileName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.Bundle(IBundlerContext context)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.<>c__DisplayClass16_0.<GetBundleFilesAsync>b__0()
+   at System.Collections.Generic.AbpDictionaryExtensions.<>c__DisplayClass7_0`2.<GetOrAdd>b__0(TKey k)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Collections.Generic.AbpDictionaryExtensions.GetOrAdd[TKey,TValue](ConcurrentDictionary`2 dictionary, TKey key, Func`1 factory)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleCache.GetOrAdd(String bundleName, Func`1 factory)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.GetBundleFilesAsync(BundleConfigurationCollection bundles, String bundleName, IBundler bundler)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.GetStyleBundleFilesAsync(String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperStyleService.GetBundleFilesAsync(String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperResourceService.ProcessAsync(ViewContext viewContext, TagHelper tagHelper, TagHelperContext context, TagHelperOutput output, List`1 bundleItems, String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpBundleTagHelperService`2.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Themes_Basic_Layouts_Application.<>c__DisplayClass13_0.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Themes_Basic_Layouts_Application.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Volo.Abp.AspNetCore.Serilog.AbpSerilogMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events, IBackChannelLogoutService backChannelLogoutService)
+   at IdentityServer4.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.MultiTenancy.MultiTenancyMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpJwtTokenMiddlewareExtension.<>c__DisplayClass0_0.<<UseJwtTokenMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+2022-05-03 16:00:25.050 -03:00 [ERR] Connection id "0HMHD6SK9RJ96", Request id "0HMHD6SK9RJ96:00000002": An unhandled exception was thrown by the application.
+Volo.Abp.AbpException: Could not find file '/libs/abp/core/abp.css'
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetFileInfo(IBundlerContext context, String file)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetAndMinifyFileContent(IBundlerContext context, String fileName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.GetFileContentConsideringMinification(IBundlerContext context, String fileName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundlerBase.Bundle(IBundlerContext context)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.<>c__DisplayClass16_0.<GetBundleFilesAsync>b__0()
+   at System.Collections.Generic.AbpDictionaryExtensions.<>c__DisplayClass7_0`2.<GetOrAdd>b__0(TKey k)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Collections.Generic.AbpDictionaryExtensions.GetOrAdd[TKey,TValue](ConcurrentDictionary`2 dictionary, TKey key, Func`1 factory)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleCache.GetOrAdd(String bundleName, Func`1 factory)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.GetBundleFilesAsync(BundleConfigurationCollection bundles, String bundleName, IBundler bundler)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.BundleManager.GetStyleBundleFilesAsync(String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperStyleService.GetBundleFilesAsync(String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpTagHelperResourceService.ProcessAsync(ViewContext viewContext, TagHelper tagHelper, TagHelperContext context, TagHelperOutput output, List`1 bundleItems, String bundleName)
+   at Volo.Abp.AspNetCore.Mvc.UI.Bundling.TagHelpers.AbpBundleTagHelperService`2.ProcessAsync(TagHelperContext context, TagHelperOutput output)
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.<RunAsync>g__Awaited|0_0(Task task, TagHelperExecutionContext executionContext, Int32 i, Int32 count)
+   at AspNetCoreGeneratedDocument.Themes_Basic_Layouts_Application.<>c__DisplayClass13_0.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()
+   at AspNetCoreGeneratedDocument.Themes_Basic_Layouts_Application.ExecuteAsync()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Volo.Abp.AspNetCore.Serilog.AbpSerilogMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.Auditing.AbpAuditingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.IdentityServerMiddleware.Invoke(HttpContext context, IEndpointRouter router, IUserSession session, IEventService events, IBackChannelLogoutService backChannelLogoutService)
+   at IdentityServer4.Hosting.MutualTlsEndpointMiddleware.Invoke(HttpContext context, IAuthenticationSchemeProvider schemes)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at IdentityServer4.Hosting.BaseUrlMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Uow.AbpUnitOfWorkMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Volo.Abp.AspNetCore.ExceptionHandling.AbpExceptionHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Volo.Abp.AspNetCore.MultiTenancy.MultiTenancyMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Builder.ApplicationBuilderAbpJwtTokenMiddlewareExtension.<>c__DisplayClass0_0.<<UseJwtTokenMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Volo.Abp.AspNetCore.Tracing.AbpCorrelationIdMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RequestLocalization.AbpRequestLocalizationMiddleware.InvokeAsync(HttpContext context, RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.ExecuteWithFilterAsync(IHttpSocketAdapter injectScriptSocket, String requestId, HttpContext httpContext)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2022-05-03 16:00:25.071 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/ - - - 500 0 - 9563.1633ms
+2022-05-03 16:03:32.549 -03:00 [INF] Starting web host.
+2022-05-03 16:03:38.753 -03:00 [INF] Loaded ABP modules:
+2022-05-03 16:03:38.755 -03:00 [INF] - MMFinancial.Web.MMFinancialWebModule
+2022-05-03 16:03:38.755 -03:00 [INF]   - MMFinancial.MMFinancialHttpApiModule
+2022-05-03 16:03:38.755 -03:00 [INF]     - MMFinancial.MMFinancialApplicationContractsModule
+2022-05-03 16:03:38.756 -03:00 [INF]       - MMFinancial.MMFinancialDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]           - Volo.Abp.Validation.AbpValidationModule
+2022-05-03 16:03:38.756 -03:00 [INF]             - Volo.Abp.Validation.AbpValidationAbstractionsModule
+2022-05-03 16:03:38.756 -03:00 [INF]             - Volo.Abp.Localization.AbpLocalizationModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.Settings.AbpSettingsModule
+2022-05-03 16:03:38.756 -03:00 [INF]                 - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2022-05-03 16:03:38.756 -03:00 [INF]                 - Volo.Abp.Security.AbpSecurityModule
+2022-05-03 16:03:38.756 -03:00 [INF]                 - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2022-05-03 16:03:38.756 -03:00 [INF]                   - Volo.Abp.Data.AbpDataModule
+2022-05-03 16:03:38.756 -03:00 [INF]                     - Volo.Abp.ObjectExtending.AbpObjectExtendingModule
+2022-05-03 16:03:38.756 -03:00 [INF]                     - Volo.Abp.Uow.AbpUnitOfWorkModule
+2022-05-03 16:03:38.756 -03:00 [INF]                     - Volo.Abp.EventBus.Abstractions.AbpEventBusAbstractionsModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.Identity.AbpIdentityDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]           - Volo.Abp.Users.AbpUsersDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]           - Volo.Abp.Features.AbpFeaturesModule
+2022-05-03 16:03:38.756 -03:00 [INF]             - Volo.Abp.Authorization.AbpAuthorizationAbstractionsModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.IdentityServer.AbpIdentityServerDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.TenantManagement.AbpTenantManagementDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainSharedModule
+2022-05-03 16:03:38.756 -03:00 [INF]       - Volo.Abp.Account.AbpAccountApplicationContractsModule
+2022-05-03 16:03:38.756 -03:00 [INF]         - Volo.Abp.Identity.AbpIdentityApplicationContractsModule
+2022-05-03 16:03:38.756 -03:00 [INF]           - Volo.Abp.Users.AbpUsersAbstractionModule
+2022-05-03 16:03:38.756 -03:00 [INF]             - Volo.Abp.EventBus.AbpEventBusModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.Json.AbpJsonModule
+2022-05-03 16:03:38.756 -03:00 [INF]                 - Volo.Abp.Timing.AbpTimingModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.Guids.AbpGuidsModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.BackgroundWorkers.AbpBackgroundWorkersModule
+2022-05-03 16:03:38.756 -03:00 [INF]                 - Volo.Abp.Threading.AbpThreadingModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.DistributedLocking.AbpDistributedLockingAbstractionsModule
+2022-05-03 16:03:38.756 -03:00 [INF]           - Volo.Abp.Authorization.AbpAuthorizationModule
+2022-05-03 16:03:38.756 -03:00 [INF]           - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationContractsModule
+2022-05-03 16:03:38.756 -03:00 [INF]             - Volo.Abp.Application.AbpDddApplicationContractsModule
+2022-05-03 16:03:38.756 -03:00 [INF]               - Volo.Abp.Auditing.AbpAuditingContractsModule
+2022-05-03 16:03:38.756 -03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationContractsModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementApplicationContractsModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementApplicationContractsModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.Account.AbpAccountHttpApiModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.Identity.AbpIdentityHttpApiModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2022-05-03 16:03:38.757 -03:00 [INF]             - Volo.Abp.Auditing.AbpAuditingModule
+2022-05-03 16:03:38.757 -03:00 [INF]             - Volo.Abp.Http.AbpHttpModule
+2022-05-03 16:03:38.757 -03:00 [INF]               - Volo.Abp.Http.AbpHttpAbstractionsModule
+2022-05-03 16:03:38.757 -03:00 [INF]               - Volo.Abp.Minify.AbpMinifyModule
+2022-05-03 16:03:38.757 -03:00 [INF]             - Volo.Abp.ExceptionHandling.AbpExceptionHandlingModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.UI.Navigation.AbpUiNavigationModule
+2022-05-03 16:03:38.757 -03:00 [INF]             - Volo.Abp.UI.AbpUiModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.GlobalFeatures.AbpGlobalFeaturesModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.Application.AbpDddApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]             - Volo.Abp.Domain.AbpDddDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]               - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2022-05-03 16:03:38.757 -03:00 [INF]               - Volo.Abp.Specifications.AbpSpecificationsModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.PermissionManagement.HttpApi.AbpPermissionManagementHttpApiModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementHttpApiModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementHttpApiModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementHttpApiModule
+2022-05-03 16:03:38.757 -03:00 [INF]   - MMFinancial.MMFinancialApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - MMFinancial.MMFinancialDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.BackgroundJobs.AbpBackgroundJobsDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.BackgroundJobs.AbpBackgroundJobsModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.FeatureManagement.AbpFeatureManagementDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.Caching.AbpCachingModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.Serialization.AbpSerializationModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.Identity.AbpIdentityDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.Users.AbpUsersDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.PermissionManagement.Identity.AbpPermissionManagementDomainIdentityModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.IdentityServer.AbpIdentityServerDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.PermissionManagement.IdentityServer.AbpPermissionManagementDomainIdentityServerModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.TenantManagement.AbpTenantManagementDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.Emailing.AbpEmailingModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.TextTemplating.AbpTextTemplatingModule
+2022-05-03 16:03:38.757 -03:00 [INF]           - Volo.Abp.TextTemplating.Scriban.AbpTextTemplatingScribanModule
+2022-05-03 16:03:38.757 -03:00 [INF]             - Volo.Abp.TextTemplating.AbpTextTemplatingCoreModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.BlobStoring.Database.BlobStoringDatabaseDomainModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.BlobStoring.AbpBlobStoringModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.Account.AbpAccountApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]       - Volo.Abp.Identity.AbpIdentityApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]         - Volo.Abp.PermissionManagement.AbpPermissionManagementApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.TenantManagement.AbpTenantManagementApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementApplicationModule
+2022-05-03 16:03:38.757 -03:00 [INF]     - Volo.Abp.SettingManagement.AbpSettingManagementApplicationModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - MMFinancial.EntityFrameworkCore.MMFinancialEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.Identity.EntityFrameworkCore.AbpIdentityEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]       - Volo.Abp.Users.EntityFrameworkCore.AbpUsersEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]         - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.IdentityServer.EntityFrameworkCore.AbpIdentityServerEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.EntityFrameworkCore.SqlServer.AbpEntityFrameworkCoreSqlServerModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.BackgroundJobs.EntityFrameworkCore.AbpBackgroundJobsEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.TenantManagement.EntityFrameworkCore.AbpTenantManagementEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.FeatureManagement.EntityFrameworkCore.AbpFeatureManagementEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.BlobStoring.Database.EntityFrameworkCore.BlobStoringDatabaseEntityFrameworkCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.Autofac.AbpAutofacModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.Castle.AbpCastleCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.Identity.Web.AbpIdentityWebModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.PermissionManagement.Web.AbpPermissionManagementWebModule
+2022-05-03 16:03:38.758 -03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.AbpAspNetCoreMvcUiBootstrapModule
+2022-05-03 16:03:38.758 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.AbpAspNetCoreMvcUiModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared.AbpAspNetCoreMvcUiThemeSharedModule
+2022-05-03 16:03:38.758 -03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Packages.AbpAspNetCoreMvcUiPackagesModule
+2022-05-03 16:03:38.758 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingAbstractionsModule
+2022-05-03 16:03:38.758 -03:00 [INF]       - Volo.Abp.AspNetCore.Mvc.UI.Widgets.AbpAspNetCoreMvcUiWidgetsModule
+2022-05-03 16:03:38.758 -03:00 [INF]         - Volo.Abp.AspNetCore.Mvc.UI.Bundling.AbpAspNetCoreMvcUiBundlingModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.SettingManagement.Web.AbpSettingManagementWebModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.Account.Web.AbpAccountWebIdentityServerModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.Account.Web.AbpAccountWebModule
+2022-05-03 16:03:38.758 -03:00 [INF]       - Volo.Abp.Identity.AspNetCore.AbpIdentityAspNetCoreModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic.AbpAspNetCoreMvcUiBasicThemeModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy.AbpAspNetCoreMvcUiMultiTenancyModule
+2022-05-03 16:03:38.758 -03:00 [INF]       - Volo.Abp.AspNetCore.MultiTenancy.AbpAspNetCoreMultiTenancyModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.AspNetCore.Authentication.JwtBearer.AbpAspNetCoreAuthenticationJwtBearerModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.TenantManagement.Web.AbpTenantManagementWebModule
+2022-05-03 16:03:38.758 -03:00 [INF]     - Volo.Abp.FeatureManagement.AbpFeatureManagementWebModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.AspNetCore.Serilog.AbpAspNetCoreSerilogModule
+2022-05-03 16:03:38.758 -03:00 [INF]   - Volo.Abp.Swashbuckle.AbpSwashbuckleModule
+2022-05-03 16:03:38.973 -03:00 [INF] Starting IdentityServer4 version 4.1.2+997a6cdd643e46cd5762b710c4ddc43574cbec2e
+2022-05-03 16:03:40.826 -03:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2022-05-03 16:03:41.042 -03:00 [INF] User profile is available. Using 'C:\Users\mateu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-05-03 16:03:41.304 -03:00 [INF] Initialized all ABP modules.
+2022-05-03 16:03:41.513 -03:00 [INF] Now listening on: http://127.0.0.1:21262
+2022-05-03 16:03:41.513 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-05-03 16:03:41.513 -03:00 [INF] Hosting environment: Staging
+2022-05-03 16:03:41.513 -03:00 [INF] Content root path: C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Web\
+2022-05-03 16:03:41.743 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/ - -
+2022-05-03 16:03:41.743 -03:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:44315/ - 0
+2022-05-03 16:03:41.795 -03:00 [INF] Request finished HTTP/1.1 DEBUG http://localhost:44315/ - 0 - 200 0 - 50.8361ms
+2022-05-03 16:03:46.793 -03:00 [INF] Executing endpoint '/Index'
+2022-05-03 16:03:46.820 -03:00 [INF] Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index
+2022-05-03 16:03:46.823 -03:00 [INF] Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+2022-05-03 16:03:46.874 -03:00 [INF] Executing handler method MMFinancial.Web.Pages.IndexModel.OnGet - ModelState is "Valid"
+2022-05-03 16:03:46.875 -03:00 [INF] Executed handler method OnGet, returned result .
+2022-05-03 16:03:46.882 -03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-05-03 16:03:46.882 -03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-05-03 16:03:47.172 -03:00 [INF] Bundling __bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css (12 files)
+2022-05-03 16:03:47.345 -03:00 [INF]   > Minified /libs/abp/core/abp.css (1331 bytes -> 868 bytes)
+2022-05-03 16:03:47.438 -03:00 [INF]   > Minified /libs/@fortawesome/fontawesome-free/css/all.css (78193 bytes -> 53572 bytes)
+2022-05-03 16:03:47.464 -03:00 [INF]   > Minified /libs/@fortawesome/fontawesome-free/css/v4-shims.css (43484 bytes -> 33344 bytes)
+2022-05-03 16:03:47.528 -03:00 [INF]   > Minified /libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css (54850 bytes -> 43189 bytes)
+2022-05-03 16:03:47.549 -03:00 [INF]   > Minified /libs/datatables.net-bs5/css/dataTables.bootstrap5.css (9443 bytes -> 8152 bytes)
+2022-05-03 16:03:47.558 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-styles.css (464 bytes -> 379 bytes)
+2022-05-03 16:03:47.560 -03:00 [INF]   > Minified /themes/basic/layout.css (1735 bytes -> 1230 bytes)
+2022-05-03 16:03:47.566 -03:00 [INF]   > Minified /global-styles.css (26 bytes -> 0 bytes)
+2022-05-03 16:03:47.567 -03:00 [INF] Bundled __bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css (342434 bytes)
+2022-05-03 16:03:47.625 -03:00 [INF] Bundling __bundles/Pages.Index.91A143E5BBA37D801A02555A7407C133.css (1 files)
+2022-05-03 16:03:47.628 -03:00 [INF]   > Minified /Pages/Index.css (15 bytes -> 0 bytes)
+2022-05-03 16:03:47.628 -03:00 [INF] Bundled __bundles/Pages.Index.91A143E5BBA37D801A02555A7407C133.css (0 bytes)
+2022-05-03 16:03:48.532 -03:00 [INF] Authorization failed. These requirements were not met:
+PermissionRequirement: SettingManagement.Emailing
+2022-05-03 16:03:48.725 -03:00 [INF] Bundling __bundles/Basic.Global.F4240205C2A4273A368AFF9DCA0CFA74.js (32 files)
+2022-05-03 16:03:49.113 -03:00 [INF]   > Minified /libs/abp/core/abp.js (23299 bytes -> 9291 bytes)
+2022-05-03 16:03:49.304 -03:00 [INF]   > Minified /libs/jquery/jquery.js (282115 bytes -> 87726 bytes)
+2022-05-03 16:03:49.335 -03:00 [INF]   > Minified /libs/abp/jquery/abp.jquery.js (13253 bytes -> 5592 bytes)
+2022-05-03 16:03:49.358 -03:00 [INF]   > Minified /libs/bootstrap/js/bootstrap.enable.tooltips.everywhere.js (198 bytes -> 136 bytes)
+2022-05-03 16:03:49.360 -03:00 [INF]   > Minified /libs/bootstrap/js/bootstrap.enable.popovers.everywhere.js (195 bytes -> 136 bytes)
+2022-05-03 16:03:49.442 -03:00 [INF]   > Minified /libs/jquery-validation/jquery.validate.js (50275 bytes -> 23293 bytes)
+2022-05-03 16:03:49.460 -03:00 [INF]   > Minified /libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js (19798 bytes -> 5604 bytes)
+2022-05-03 16:03:49.637 -03:00 [INF]   > Minified /libs/datatables.net/js/jquery.dataTables.js (468526 bytes -> 85302 bytes)
+2022-05-03 16:03:49.643 -03:00 [INF]   > Minified /libs/datatables.net-bs5/js/dataTables.bootstrap5.js (4850 bytes -> 2056 bytes)
+2022-05-03 16:03:49.820 -03:00 [INF]   > Minified /libs/abp/luxon/abp.luxon.js (1361 bytes -> 606 bytes)
+2022-05-03 16:03:49.824 -03:00 [INF]   > Minified /libs/timeago/jquery.timeago.js (7636 bytes -> 4107 bytes)
+2022-05-03 16:03:49.850 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/ui-extensions.js (10589 bytes -> 3026 bytes)
+2022-05-03 16:03:49.853 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/jquery-extensions.js (6610 bytes -> 2461 bytes)
+2022-05-03 16:03:49.855 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/jquery-form/jquery-form-extensions.js (3605 bytes -> 1588 bytes)
+2022-05-03 16:03:49.857 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/jquery/widget-manager.js (4790 bytes -> 1752 bytes)
+2022-05-03 16:03:49.859 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/dom-event-handlers.js (8710 bytes -> 4078 bytes)
+2022-05-03 16:03:49.861 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/bootstrap/modal-manager.js (6823 bytes -> 1887 bytes)
+2022-05-03 16:03:49.865 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/datatables/datatables-extensions.js (20337 bytes -> 6225 bytes)
+2022-05-03 16:03:49.867 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/sweetalert2/abp-sweetalert2.js (3213 bytes -> 1505 bytes)
+2022-05-03 16:03:49.868 -03:00 [INF]   > Minified /libs/abp/aspnetcore-mvc-ui-theme-shared/toastr/abp-toastr.js (951 bytes -> 342 bytes)
+2022-05-03 16:03:49.869 -03:00 [INF]   > Minified /Pages/Abp/MultiTenancy/tenant-switch.js (414 bytes -> 243 bytes)
+2022-05-03 16:03:49.870 -03:00 [INF]   > Minified /themes/basic/layout.js (543 bytes -> 384 bytes)
+2022-05-03 16:03:49.872 -03:00 [INF] Bundled __bundles/Basic.Global.F4240205C2A4273A368AFF9DCA0CFA74.js (716592 bytes)
+2022-05-03 16:03:49.882 -03:00 [INF] Bundling __bundles/Pages.Index.A4B2578EBCCAF48D15D84F95F6B828FB.js (1 files)
+2022-05-03 16:03:49.884 -03:00 [INF]   > Minified /Pages/Index.js (67 bytes -> 53 bytes)
+2022-05-03 16:03:49.884 -03:00 [INF] Bundled __bundles/Pages.Index.A4B2578EBCCAF48D15D84F95F6B828FB.js (56 bytes)
+2022-05-03 16:03:50.064 -03:00 [INF] Executed page /Index in 3236.4945ms
+2022-05-03 16:03:50.065 -03:00 [INF] Executed endpoint '/Index'
+2022-05-03 16:03:50.161 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/ - - - 200 - text/html;+charset=utf-8 8419.7099ms
+2022-05-03 16:03:50.207 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/__bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css?_v=637872014275685924 - -
+2022-05-03 16:03:50.212 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/__bundles/Basic.Global.F4240205C2A4273A368AFF9DCA0CFA74.js?_v=637872014298730263 - -
+2022-05-03 16:03:50.230 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/Abp/ApplicationConfigurationScript - -
+2022-05-03 16:03:50.231 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/libs/timeago/locales/jquery.timeago.en.js?_v=637872009963707507 - -
+2022-05-03 16:03:50.245 -03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2022-05-03 16:03:50.253 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/__bundles/Pages.Index.A4B2578EBCCAF48D15D84F95F6B828FB.js?_v=637872014298845955 - -
+2022-05-03 16:03:50.264 -03:00 [INF] Route matched with {area = "Abp", action = "Get", controller = "AbpApplicationConfigurationScript", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Get() on controller Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController (Volo.Abp.AspNetCore.Mvc).
+2022-05-03 16:03:50.275 -03:00 [INF] Sending file. Request path: '/__bundles/Pages.Index.A4B2578EBCCAF48D15D84F95F6B828FB.js'. Physical path: 'N/A'
+2022-05-03 16:03:50.276 -03:00 [INF] Sending file. Request path: '/libs/timeago/locales/jquery.timeago.en.js'. Physical path: 'C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Web\wwwroot\libs\timeago\locales\jquery.timeago.en.js'
+2022-05-03 16:03:50.276 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/__bundles/Pages.Index.A4B2578EBCCAF48D15D84F95F6B828FB.js?_v=637872014298845955 - - - 200 56 application/javascript 22.6877ms
+2022-05-03 16:03:50.276 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/libs/timeago/locales/jquery.timeago.en.js?_v=637872009963707507 - - - 200 808 application/javascript 44.7221ms
+2022-05-03 16:03:50.282 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/Abp/ServiceProxyScript - -
+2022-05-03 16:03:50.283 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:44315/_framework/aspnetcore-browser-refresh.js - -
+2022-05-03 16:03:50.289 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 7.1417ms
+2022-05-03 16:03:50.289 -03:00 [INF] Executing endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2022-05-03 16:03:50.344 -03:00 [INF] Sending file. Request path: '/__bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css'. Physical path: 'N/A'
+2022-05-03 16:03:50.344 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/__bundles/Basic.Global.B0533146E49377F910AF81AB1D901E85.css?_v=637872014275685924 - - - 200 345924 text/css 137.1438ms
+2022-05-03 16:03:50.390 -03:00 [INF] Route matched with {area = "Abp", action = "GetAll", controller = "AbpServiceProxyScript", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetAll(Volo.Abp.AspNetCore.Mvc.ProxyScripting.ServiceProxyGenerationModel) on controller Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController (Volo.Abp.AspNetCore.Mvc).
+2022-05-03 16:03:50.523 -03:00 [INF] Sending file. Request path: '/__bundles/Basic.Global.F4240205C2A4273A368AFF9DCA0CFA74.js'. Physical path: 'N/A'
+2022-05-03 16:03:50.524 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/__bundles/Basic.Global.F4240205C2A4273A368AFF9DCA0CFA74.js?_v=637872014298730263 - - - 200 718021 application/javascript 311.7667ms
+2022-05-03 16:03:50.734 -03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2022-05-03 16:03:50.736 -03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc) in 345.1919ms
+2022-05-03 16:03:50.736 -03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ProxyScripting.AbpServiceProxyScriptController.GetAll (Volo.Abp.AspNetCore.Mvc)'
+2022-05-03 16:03:50.737 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/Abp/ServiceProxyScript - - - 200 11081 application/javascript 454.9424ms
+2022-05-03 16:03:51.052 -03:00 [INF] Executing ContentResult with HTTP Response ContentType of application/javascript
+2022-05-03 16:03:51.071 -03:00 [INF] Executed action Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc) in 806.8041ms
+2022-05-03 16:03:51.071 -03:00 [INF] Executed endpoint 'Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.AbpApplicationConfigurationScriptController.Get (Volo.Abp.AspNetCore.Mvc)'
+2022-05-03 16:03:51.073 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:44315/Abp/ApplicationConfigurationScript - - - 200 88159 application/javascript 842.6585ms

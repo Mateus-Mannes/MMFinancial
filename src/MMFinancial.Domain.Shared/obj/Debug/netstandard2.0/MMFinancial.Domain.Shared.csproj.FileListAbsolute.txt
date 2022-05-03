@@ -1,0 +1,11 @@
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\bin\Debug\netstandard2.0\MMFinancial.Domain.Shared.deps.json
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\bin\Debug\netstandard2.0\MMFinancial.Domain.Shared.dll
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\bin\Debug\netstandard2.0\MMFinancial.Domain.Shared.pdb
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.csproj.AssemblyReference.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.EmbeddedFilesManifest.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.AssemblyInfoInputs.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.AssemblyInfo.cs
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.csproj.CoreCompileInputs.cache
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.dll
+C:\Users\mateu\Downloads\Nova pasta (7)\MMFinancial\src\MMFinancial.Domain.Shared\obj\Debug\netstandard2.0\MMFinancial.Domain.Shared.pdb
