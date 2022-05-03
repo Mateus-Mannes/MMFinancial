@@ -30,7 +30,7 @@ https://docs.abp.io/en/abp/4.4/Getting-Started-Running-Solution?UI=MVC&DB=EF&Tie
 
  -> User management: the user registragion requires an email and a user name. The password for login is send for the registered email. Here I used abp Identity (https://docs.abp.io/en/abp/latest/Modules/IdentityServer) and account (https://docs.abp.io/en/abp/latest/Modules/Account) modules. I customized then by overriding it. The Services and Razor models that I overrided from abp has the prefix "App", for example: AppAccountAppService.cs.
  
- -> Authorization: the application has the admin role with full control and a default user role. All using abp fetures for authorization (https://docs.abp.io/en/abp/latest/Authorization)
+ -> Authorization: the application has the admin role with full control. When started the app, you need to add a default user role with the user permission (give access to the developed pages), and user manegement permission if you want. All using abp fetures for authorization (https://docs.abp.io/en/abp/latest/Authorization)
  
  -> Transactions Features: The app has two main features involving the financial transactions analysis (I'm not going to explicit all the business rules here. This details are in the alura challange page https://www.alura.com.br/challenges/back-end-3/semana-01-upload-tratamento-arquivos-csv):
   
