@@ -20,7 +20,7 @@ Node v12 or v14
 
 Yarn v1.20+ (not v2) 1 or npm v6+ (already installed with Node)
 
-Abp documentation for running the application:
+Abp documentation tutorial for running the application:
 
 https://docs.abp.io/en/abp/4.4/Getting-Started-Running-Solution?UI=MVC&DB=EF&Tiered=No
 
@@ -40,8 +40,8 @@ https://docs.abp.io/en/abp/4.4/Getting-Started-Running-Solution?UI=MVC&DB=EF&Tie
    
 # Deployment
 
-Deployed at https://mmfinancialapi.azurewebsites.net/
-tutorial reference: https://community.abp.io/posts/deploying-abp-applications-to-azure-ztvp6p57
+Deployed at https://mmfinancialapi.azurewebsites.net/ (Azure)
+reference tutorial: https://community.abp.io/posts/deploying-abp-applications-to-azure-ztvp6p57
 
 # Development process:
 
